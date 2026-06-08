@@ -1,0 +1,53 @@
+/* Ajuste de opacidad global para el texto secundario en fondo negro */
+.text-light-50 {
+    color: rgba(248, 249, 250, 0.7) !important;
+}
+
+/* Espaciado de letras para títulos de sección */
+.tracking-wider {
+    letter-spacing: 0.08rem;
+}
+
+.tracking-wide {
+    letter-spacing: 0.03rem;
+}
+
+/* Transición y efectos Hover para los enlaces de las listas */
+.footer-links a {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #ffc107 !important;
+    /* Cambia a amarillo Bootstrap */
+    transform: translateX(4px);
+    /* Pequeño desplazamiento dinámico hacia la derecha */
+}
+
+/* Efectos para los íconos de redes sociales */
+.social-icon {
+    transition: transform 0.2s, color 0.2s;
+}
+
+.social-icon:hover {
+    color: #ffc107 !important;
+    transform: translateY(-3px);
+    /* Levanta el ícono ligeramente */
+}
+
+/* Estilo personalizado para el botón del Libro de Reclamaciones */
+.book-btn {
+    border-color: rgba(255, 193, 7, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+.book-btn:hover {
+    background-color: #ffc107;
+    color: #000 !important;
+    border-color: #ffc107;
+}
+
+.book-btn:hover .text-white-50 {
+    color: #212529 !important;
+}
