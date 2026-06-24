@@ -1,12 +1,31 @@
 {
+    "users": [
+        {
+            "id": 1,
+            "role": "admin",
+            "nombre": "admin",
+            "correo": "admin@admin.pe",
+            "contraseña": "admin"
+        }
+    ],
+    "roles": [
+        {
+            "id": 1,
+            "nombre": "admin"
+        },
+        {
+            "id": 2,
+            "nombre": "cliente"
+        }
+    ],
     "productos": [
         {
             "id": 1,
             "esPersonalizado": false,
             "nombre": "Figura de Goku",
             "categoria": "Figuras",
-            "stock": 10,
-            "precio": 29.99,
+            "stock": 0,
+            "precioActual": 29.99,
             "precioAntes": 39.99,
             "imagenUrl": "products_images/figura_de_goku.webp",
             "descripcion": "Figura de acción de Goku en su forma Super Saiyan, con detalles impresionantes y articulaciones para posar.",
@@ -31,11 +50,11 @@
         },
         {
             "id": 2,
-            "esPersonalizado": false,
+            "esPersonalizado": true,
             "nombre": "Camiseta de Naruto",
             "categoria": "Ropa",
             "stock": 20,
-            "precio": 19.99,
+            "precioActual": 19.99,
             "precioAntes": 24.99,
             "imagenUrl": "products_images/camiseta_de_naruto.jpg",
             "descripcion": "Camiseta de algodón con el diseño del símbolo de la aldea de Konoha.",
@@ -72,7 +91,7 @@
             "nombre": "Katana Enma - Roronoa Zoro (One Piece)",
             "categoria": "Katanas",
             "stock": 5,
-            "precio": 149.99,
+            "precioActual": 149.99,
             "precioAntes": 179.99,
             "imagenUrl": "products_images/katana_enma.webp",
             "descripcion": "Réplica exacta a escala real de la mítica espada Enma de Zoro, ideal para cosplay o exhibición.",
@@ -101,7 +120,7 @@
             "nombre": "Manga Demon Slayer (Kimetsu no Yaiba) - Vol. 01",
             "categoria": "Mangas",
             "stock": 25,
-            "precio": 35.00,
+            "precioActual": 35.00,
             "precioAntes": null,
             "imagenUrl": "products_images/manga_demon_slayer_01.webp",
             "descripcion": "Sigue la historia de Tanjiro Kamado en su viaje para salvar a su hermana Nezuko en este espectacular tomo de estreno.",

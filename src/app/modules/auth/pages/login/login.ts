@@ -1,0 +1,18 @@
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-login',
+  imports: [RouterLink],
+  templateUrl: './login.html',
+  styles: ``,
+})
+export class Login {
+
+  private router = inject(Router)
+
+  manejarLogin(correo: string, contraseña: string): void {
+
+  };
+
+}
