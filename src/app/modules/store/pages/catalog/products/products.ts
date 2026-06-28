@@ -2,19 +2,20 @@ import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { DecimalPipe } from '@angular/common';
-import { Producto } from '../../../../core/model/producto.interface';
-import { ProductService } from '../../../../core/services/product-service';
+import { ProductService } from '../../../../../core/services/product-service';
+import { Product } from '../../../../../core/model/product.interface';
 
 @Component({
-  selector: 'app-catalogo-productos',
+  selector: 'app-products',
   imports: [RouterLink, DecimalPipe, NgOptimizedImage, CommonModule],
-  templateUrl: './catalogo-productos.html',
-  styleUrl: './catalogo-productos.css',
+  templateUrl: './products.html',
+  styleUrl: './products.css',
 })
-export class CatalogoProductos implements OnInit {
+export class Products implements OnInit {
   private productoservice = inject(ProductService);
+  private cdr = inject(ChangeDetectorRef);
 
-  listProductos: Producto[] = [];
+  listProductos: Product[] = [];
 
   ngOnInit(): void {
     this.obtenerProductos();
@@ -24,12 +25,11 @@ export class CatalogoProductos implements OnInit {
     this.productoservice.getProductos().subscribe({
       next: (data) => {
         this.listProductos = data;
+        this.cdr.detectChanges();
       },
       error: (err) => {
         console.error('Error al obtener productos:', err);
       },
     });
   }
-
-
 }
