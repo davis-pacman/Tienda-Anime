@@ -1,1 +1,30 @@
-<p>register-page works!</p>
+<div class="min-vh-100 bg-black d-flex align-items-center justify-content-center py-5 px-3">
+    <div class="card bg-dark border-secondary shadow-lg w-100" style="max-width: 520px;">
+        <div class="card-body p-4 p-md-5 text-center">
+            <a routerLink="/store/home" class="text-decoration-none">
+                <h2 class="text-warning fw-bold mb-1 fs-2">⛩️ Akihabara<span class="text-light">Store</span></h2>
+            </a>
+            <p class="text-white-50 small mb-4">Crea tu cuenta para vivir la experiencia otaku completa</p>
+
+            <form (submit)="$event.preventDefault(); manejarRegistro(txtNombre.value, txtCorreo.value, txtPassword.value)">
+                <div class="mb-3 text-start">
+                    <label class="form-label text-light-50 small fw-semibold">Nombre completo</label>
+                    <input #txtNombre type="text" class="form-control bg-dark text-white border-secondary" required />
+                </div>
+                <div class="mb-3 text-start">
+                    <label class="form-label text-light-50 small fw-semibold">Correo electrónico</label>
+                    <input #txtCorreo type="email" class="form-control bg-dark text-white border-secondary" required />
+                </div>
+                <div class="mb-4 text-start">
+                    <label class="form-label text-light-50 small fw-semibold">Contraseña</label>
+                    <input #txtPassword type="password" class="form-control bg-dark text-white border-secondary" required />
+                </div>
+                <button class="btn btn-warning w-100 fw-bold py-2 mb-3" type="submit">Crear cuenta</button>
+                <p class="text-white-50 small mb-0">
+                    ¿Ya tienes cuenta?
+                    <a routerLink="/auth/login" class="text-warning fw-bold text-decoration-none">Inicia sesión</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

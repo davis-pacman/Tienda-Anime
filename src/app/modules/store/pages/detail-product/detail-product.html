@@ -1,1 +1,48 @@
-<p>detalle-producto works!</p>
+<section class="py-5 bg-black text-white min-vh-100">
+  <div class="container">
+    @if (producto) {
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6">
+          <div class="card bg-dark border-secondary p-3">
+            <img [src]="producto.imagenUrl" [alt]="producto.nombre" class="img-fluid rounded" style="max-height: 420px; object-fit: contain;" />
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="badge bg-warning text-dark mb-3">{{ producto.categoria }}</span>
+          <h2 class="fw-bold text-warning">{{ producto.nombre }}</h2>
+          <p class="text-white-50">{{ producto.descripcion }}</p>
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <span class="fs-3 fw-bold text-white">S/ {{ producto.precioActual | number: '1.2-2' }}</span>
+            @if (producto.precioAntes) {
+              <span class="text-white-50 text-decoration-line-through">S/ {{ producto.precioAntes | number: '1.2-2' }}</span>
+            }
+          </div>
+          <div class="mb-4">
+            <p class="text-white-50 mb-1">Stock disponible: <strong class="text-white">{{ producto.stock }}</strong></p>
+            @if (producto.esPersonalizado) {
+              <span class="badge bg-info text-dark">Producto personalizado</span>
+            }
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-warning fw-bold" (click)="agregarAlCarrito()">Añadir al carrito</button>
+            <a routerLink="/store/cart" class="btn btn-outline-light">Ver carrito</a>
+          </div>
+          @if (producto.especificaciones?.length) {
+            <div class="mt-4">
+              <h5 class="text-light">Especificaciones</h5>
+              <ul class="text-white-50">
+                @for (spec of producto.especificaciones; track spec.nombre) {
+                  <li><strong class="text-white">{{ spec.nombre }}:</strong> {{ spec.valor }}</li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      </div>
+    } @else {
+      <div class="text-center py-5">
+        <h3 class="text-warning">Cargando producto...</h3>
+      </div>
+    }
+  </div>
+</section>

@@ -4,6 +4,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { DecimalPipe } from '@angular/common';
 import { ProductService } from '../../../../../core/services/product-service';
 import { Product } from '../../../../../core/model/product.interface';
+import { CartService } from '../../../../../core/services/cart-service';
 
 @Component({
   selector: 'app-products',
@@ -14,6 +15,7 @@ import { Product } from '../../../../../core/model/product.interface';
 export class Products implements OnInit {
   private productoservice = inject(ProductService);
   private cdr = inject(ChangeDetectorRef);
+  private cartService = inject(CartService);
 
   listProductos: Product[] = [];
 
@@ -31,5 +33,9 @@ export class Products implements OnInit {
         console.error('Error al obtener productos:', err);
       },
     });
+  }
+
+  agregarAlCarrito(producto: Product): void {
+    this.cartService.addToCart(producto);
   }
 }

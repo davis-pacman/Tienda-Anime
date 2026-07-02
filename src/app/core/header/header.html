@@ -21,66 +21,31 @@
                     </a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropProductos" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-tags-fill"></i> Productos
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/store/catalog">
+                        <i class="bi bi-tags-fill"></i> Catálogo
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark border-secondary" aria-labelledby="dropProductos">
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/store/catalog"
-                                [queryParams]="{cat: 'figuras'}">✨ Figuras de Colección</a></li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/productos"
-                                [queryParams]="{cat: 'mangas'}">📚 Mangas y Cómics</a></li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/productos"
-                                [queryParams]="{cat: 'katanas'}">⚔️ Katanas (Réplicas y Lego)</a></li>
-                        <li>
-                            <hr class="dropdown-divider border-secondary">
-                        </li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/productos"
-                                [queryParams]="{cat: 'ropa'}">👕 Ropa e Indumentaria</a></li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/productos"
-                                [queryParams]="{cat: 'almohadas'}">🛌 Almohadas y Peluches</a></li>
-                        <li>
-                            <hr class="dropdown-divider border-secondary">
-                        </li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/productos"
-                                [queryParams]="{cat: 'accesorios'}">🔑 Llaveros, Cuadros y Máscaras</a></li>
-                    </ul>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-info fw-semibold" href="#" id="dropPersonalizados"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-palette-fill"></i> Personalizados
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/store/blog">
+                        <i class="bi bi-journal-text"></i> Blog
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark border-info" aria-labelledby="dropPersonalizados">
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/personalizar-ropa">🎨 Ropa
-                                Personalizada</a></li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/personalizar-tazas">☕ Tazas
-                                Personalizadas</a></li>
-                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/store/support">
+                        <i class="bi bi-headset"></i> Soporte
+                    </a>
                 </li>
             </ul>
 
-            <!-- Barra de búsqueda  -->
-            <div class="mx-lg-3 my-2 my-lg-0 flex-grow-1" style="max-width: 400px;">
-                <form class="d-flex shadow-sm" role="search">
-                    <div class="input-group">
-                        <input type="search" id="buscadorHeader" name="BarraDeBusqueda"
-                            placeholder="¿Qué artículo buscas hoy?"
-                            class="form-control bg-light bg-opacity-75 text-success placeholder-glow border-secondary fs-5 text-opacity-50">
-                        <button class="btn btn-warning fw-bold" type="submit"><i class="bi bi-search"></i></button>
-                    </div>
-                </form>
-            </div>
-
             <div class="d-flex align-items-center gap-3 interact-buttons">
 
-                <a routerLink="/tienda/carrito" class="btn btn-outline-warning position-relative px-3"
-                    title="Ver Carrito">
+                <a routerLink="/store/cart" class="btn btn-outline-warning position-relative px-3" title="Ver Carrito">
                     <i class="bi bi-cart3 fs-5"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        0
+                        {{ cartCount }}
                     </span>
                 </a>
 

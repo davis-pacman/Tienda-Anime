@@ -8,11 +8,11 @@ import { Router, RouterLink } from '@angular/router';
   styles: ``,
 })
 export class Login {
-
-  private router = inject(Router)
+  private router = inject(Router);
 
   manejarLogin(correo: string, contraseña: string): void {
-
-  };
-
+    if (correo && contraseña) {
+      this.router.navigate(['/store/home']);
+    }
+  }
 }
