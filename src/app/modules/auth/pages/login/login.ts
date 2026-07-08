@@ -5,7 +5,7 @@ import { Router, RouterLink } from '@angular/router';
   selector: 'app-login',
   imports: [RouterLink],
   templateUrl: './login.html',
-  styles: ``,
+  styleUrl: './login.css',
 })
 export class Login {
 

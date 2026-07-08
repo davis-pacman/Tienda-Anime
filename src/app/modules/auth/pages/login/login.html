@@ -2,15 +2,15 @@
     <div class="card bg-dark border-secondary shadow-lg w-100" style="max-width: 450px;">
 
         <div class="card-body p-4 p-md-5 text-center">
-            <a routerLink="/store/home" class="text-decoration-none">
-                <h2 class="text-warning fw-bold mb-1 fs-2">⛩️ Akihabara<span class="text-light">Store</span></h2>
-            </a>
+
+            <h2 class="text-warning fw-bold mb-1 fs-2"> Inicio de Sesion</h2>
+
             <p class="text-white-50 small mb-4">Ingresa tus credenciales para continuar tu aventura</p>
 
             <form (submit)="$event.preventDefault(); manejarLogin(txtEmail.value, txtPassword.value)">
 
                 <div class="mb-3 text-start">
-                    <label for="loginEmail" class="form-label text-light-50 small fw-semibold">Correo
+                    <label for="loginEmail" class="form-label text-light small fw-semibold">Correo
                         Electrónico</label>
                     <div class="input-group">
                         <span class="input-group-text bg-black border-secondary text-white-50">
@@ -24,7 +24,7 @@
                 <div class="mb-4 text-start">
                     <div class="d-flex justify-content-between align-items-center mb-1">
                         <label for="loginPassword"
-                            class="form-label text-light-50 small fw-semibold mb-0">Contraseña</label>
+                            class="form-label text-light small fw-semibold mb-0">Contraseña</label>
                         <a href="#" class="text-warning text-decoration-none small opacity-75">¿La olvidaste?</a>
                     </div>
                     <div class="input-group">
@@ -49,6 +49,10 @@
                 <p class="text-white-50 small mb-0">
                     ¿Nuevo en la tienda?
                     <a routerLink="/auth/register" class="text-warning fw-bold text-decoration-none">Regístrate aquí</a>
+                </p>
+                <p class="text-white-50 small mb-0">
+                    ¿Tienda?
+                    <a routerLink="/store/" class="text-warning fw-bold text-decoration-none">Ir a la tienda</a>
                 </p>
 
             </form>

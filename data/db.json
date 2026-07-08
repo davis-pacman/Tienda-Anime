@@ -1,147 +1,186 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": "1",
+      "role": "admin",
+      "nombre": "admin",
+      "correo": "admin@admin.pe",
+      "contraseña": "admin"
+    },
+    {
+      "role": "cliente",
+      "nombre": "asd",
+      "apellidos": "asddddd",
+      "correo": "davisquispe278@gmail.com",
+      "contrasenia": "asdasdasdasd",
+      "id": "9AqEaL7C4wE"
+    },
+    {
+      "role": "cliente",
+      "nombre": "Davis",
+      "apellidos": "Quispe Barja",
+      "correo": "davisquispe278@xd.com",
+      "contrasenia": "asdasdoo",
+      "id": "Wyye76Dr3ak"
+    }
+  ],
+  "roles": [
+    {
+      "id": "1",
+      "nombre": "admin"
+    },
+    {
+      "id": "2",
+      "nombre": "cliente"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "nombre": "katanas"
+    },
+    {
+      "id": "2",
+      "nombre": "ropa"
+    },
+    {
+      "id": "3",
+      "nombre": "figuras"
+    },
+    {
+      "id": "4",
+      "nombre": "Mangas"
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "esPersonalizado": false,
+      "nombre": "Figura de Goku",
+      "slug": "figura-de-goku",
+      "categoria": "figuras",
+      "stock": 0,
+      "precioActual": 29.99,
+      "precioAntes": 39.99,
+      "imagenUrl": "products_images/figura_de_goku.webp",
+      "descripcion": "Figura de acción de Goku en su forma Super Saiyan, con detalles impresionantes y articulaciones para posar.",
+      "especificaciones": [
         {
-            "id": 1,
-            "role": "admin",
-            "nombre": "admin",
-            "correo": "admin@admin.pe",
-            "contraseña": "admin"
+          "nombre": "Altura",
+          "valor": "18 cm"
+        },
+        {
+          "nombre": "Material",
+          "valor": "PVC"
+        },
+        {
+          "nombre": "Fabricante",
+          "valor": "Bandai"
+        },
+        {
+          "nombre": "Articulada",
+          "valor": "No"
         }
-    ],
-    "roles": [
+      ]
+    },
+    {
+      "id": "2",
+      "esPersonalizado": true,
+      "nombre": "Camiseta de Naruto",
+      "slug": "camiseta-de-naruto",
+      "categoria": "ropa",
+      "stock": 20,
+      "precioActual": 19.99,
+      "precioAntes": 24.99,
+      "imagenUrl": "products_images/camiseta_de_naruto.jpg",
+      "descripcion": "Camiseta de algodón con el diseño del símbolo de la aldea de Konoha.",
+      "especificaciones": [
         {
-            "id": 1,
-            "nombre": "admin"
+          "nombre": "Material",
+          "valor": "100% Algodón Premium (20 al hilo)"
         },
         {
-            "id": 2,
-            "nombre": "cliente"
+          "nombre": "Tipo de Estampado",
+          "valor": "Serigrafía textil de alta durabilidad"
+        },
+        {
+          "nombre": "Corte / Fit",
+          "valor": "Unisex (Regular Fit)"
+        },
+        {
+          "nombre": "Cuello",
+          "valor": "Redondo acanalado"
+        },
+        {
+          "nombre": "Tallas Disponibles",
+          "valor": "S, M, L, XL"
+        },
+        {
+          "nombre": "Instrucciones de Lavado",
+          "valor": "Lavar a máquina con agua fría, voltear la prenda antes de lavar"
         }
-    ],
-    "productos": [
+      ]
+    },
+    {
+      "id": "3",
+      "esPersonalizado": false,
+      "nombre": "Katana Enma - Roronoa Zoro (One Piece)",
+      "slug": "katana-enma-roronoa-zoro-(one-piece)",
+      "categoria": "katanas",
+      "stock": 5,
+      "precioActual": 149.99,
+      "precioAntes": 179.99,
+      "imagenUrl": "products_images/katana_enma.webp",
+      "descripcion": "Réplica exacta a escala real de la mítica espada Enma de Zoro, ideal para cosplay o exhibición.",
+      "especificaciones": [
         {
-            "id": 1,
-            "esPersonalizado": false,
-            "nombre": "Figura de Goku",
-            "categoria": "Figuras",
-            "stock": 0,
-            "precioActual": 29.99,
-            "precioAntes": 39.99,
-            "imagenUrl": "products_images/figura_de_goku.webp",
-            "descripcion": "Figura de acción de Goku en su forma Super Saiyan, con detalles impresionantes y articulaciones para posar.",
-            "especificaciones": [
-                {
-                    "nombre": "Altura",
-                    "valor": "18 cm"
-                },
-                {
-                    "nombre": "Material",
-                    "valor": "PVC"
-                },
-                {
-                    "nombre": "Fabricante",
-                    "valor": "Bandai"
-                },
-                {
-                    "nombre": "Articulada",
-                    "valor": "No"
-                }
-            ]
+          "nombre": "Material de la hoja",
+          "valor": "Acero de carbono 1045 (Sin filo)"
         },
         {
-            "id": 2,
-            "esPersonalizado": true,
-            "nombre": "Camiseta de Naruto",
-            "categoria": "Ropa",
-            "stock": 20,
-            "precioActual": 19.99,
-            "precioAntes": 24.99,
-            "imagenUrl": "products_images/camiseta_de_naruto.jpg",
-            "descripcion": "Camiseta de algodón con el diseño del símbolo de la aldea de Konoha.",
-            "especificaciones": [
-                {
-                    "nombre": "Material",
-                    "valor": "100% Algodón Premium (20 al hilo)"
-                },
-                {
-                    "nombre": "Tipo de Estampado",
-                    "valor": "Serigrafía textil de alta durabilidad"
-                },
-                {
-                    "nombre": "Corte / Fit",
-                    "valor": "Unisex (Regular Fit)"
-                },
-                {
-                    "nombre": "Cuello",
-                    "valor": "Redondo acanalado"
-                },
-                {
-                    "nombre": "Tallas Disponibles",
-                    "valor": "S, M, L, XL"
-                },
-                {
-                    "nombre": "Instrucciones de Lavado",
-                    "valor": "Lavar a máquina con agua fría, voltear la prenda antes de lavar"
-                }
-            ]
+          "nombre": "Longitud total",
+          "valor": "103 cm"
         },
         {
-            "id": 3,
-            "esPersonalizado": false,
-            "nombre": "Katana Enma - Roronoa Zoro (One Piece)",
-            "categoria": "Katanas",
-            "stock": 5,
-            "precioActual": 149.99,
-            "precioAntes": 179.99,
-            "imagenUrl": "products_images/katana_enma.webp",
-            "descripcion": "Réplica exacta a escala real de la mítica espada Enma de Zoro, ideal para cosplay o exhibición.",
-            "especificaciones": [
-                {
-                    "nombre": "Material de la hoja",
-                    "valor": "Acero de carbono 1045 (Sin filo)"
-                },
-                {
-                    "nombre": "Longitud total",
-                    "valor": "103 cm"
-                },
-                {
-                    "nombre": "Material de la Saya (Vaina)",
-                    "valor": "Madera lacada con acabados dorados"
-                },
-                {
-                    "nombre": "Peso apróx.",
-                    "valor": "1.2 kg"
-                }
-            ]
+          "nombre": "Material de la Saya (Vaina)",
+          "valor": "Madera lacada con acabados dorados"
         },
         {
-            "id": 4,
-            "esPersonalizado": false,
-            "nombre": "Manga Demon Slayer (Kimetsu no Yaiba) - Vol. 01",
-            "categoria": "Mangas",
-            "stock": 25,
-            "precioActual": 35.00,
-            "precioAntes": null,
-            "imagenUrl": "products_images/manga_demon_slayer_01.webp",
-            "descripcion": "Sigue la historia de Tanjiro Kamado en su viaje para salvar a su hermana Nezuko en este espectacular tomo de estreno.",
-            "especificaciones": [
-                {
-                    "nombre": "Editorial",
-                    "valor": "Panini Cómics / Ivrea"
-                },
-                {
-                    "nombre": "Páginas",
-                    "valor": "192"
-                },
-                {
-                    "nombre": "Idioma",
-                    "valor": "Español"
-                },
-                {
-                    "nombre": "Tipo de encuadernación",
-                    "valor": "Rústica con sobrecubierta (Tapa blanda)"
-                }
-            ]
+          "nombre": "Peso apróx.",
+          "valor": "1.2 kg"
         }
-    ]
+      ]
+    },
+    {
+      "id": "4",
+      "esPersonalizado": false,
+      "nombre": "Manga Demon Slayer (Kimetsu no Yaiba) - Vol. 01",
+      "slug": "manga-demon-slayer-(kimetsu-no-yaiba)-vol-01",
+      "categoria": "Mangas",
+      "stock": 25,
+      "precioActual": 35,
+      "precioAntes": null,
+      "imagenUrl": "products_images/manga_demon_slayer_01.webp",
+      "descripcion": "Sigue la historia de Tanjiro Kamado en su viaje para salvar a su hermana Nezuko en este espectacular tomo de estreno.",
+      "especificaciones": [
+        {
+          "nombre": "Editorial",
+          "valor": "Panini Cómics / Ivrea"
+        },
+        {
+          "nombre": "Páginas",
+          "valor": "192"
+        },
+        {
+          "nombre": "Idioma",
+          "valor": "Español"
+        },
+        {
+          "nombre": "Tipo de encuadernación",
+          "valor": "Rústica con sobrecubierta (Tapa blanda)"
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

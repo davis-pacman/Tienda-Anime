@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../model/product.interface';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,14 +9,18 @@ import { Observable } from 'rxjs';
 export class ProductService {
   private baseUrl = 'http://localhost:3000/productos';
 
-  constructor(private http: HttpClient) { }
+  private http = inject(HttpClient);
 
   getProductos(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl);
   }
 
-  getProductoById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${this.baseUrl}/${id}`);
+  getProductoBySlug(slug: string): Observable<Product | null> {
+    return this.http.get<Product[]>(`${this.baseUrl}?slug=${slug}`).pipe(
+      map((productos: Product[]) => {
+        return productos.length > 0 ? productos[0] : null;
+      })
+    );
   }
 
   createProducto(producto: Product): Observable<Product> {
@@ -30,4 +34,9 @@ export class ProductService {
   deleteProducto(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+  getProductsByCategories(category: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.baseUrl}?categoria=${category}`);
+  }
+
 }

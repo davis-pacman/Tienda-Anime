@@ -1,1 +1,33 @@
-<p>detalle-producto works!</p>
+@if (producto(); as producto) {
+<div class="container mt-5 text-light">
+    <div class="row bg-dark p-4 rounded border border-secondary">
+
+        <div class="col-md-6 text-center">
+            <img [src]="producto.imagenUrl" class="img-fluid rounded shadow" [alt]="producto.nombre"
+                style="max-height: 450px;">
+        </div>
+
+        <div class="col-md-6">
+            <h2 class="text-warning fw-bold mb-3">{{ producto.nombre }}</h2>
+            <p class="text-danger fs-5">{{ producto.descripcion }}</p>
+
+            <div class="my-4">
+                <span class="fs-3 fw-bold text-success me-3">S/ {{ producto.precioActual }}</span>
+                <span class="text-decoration-line-through text-muted">S/ {{ producto.precioAntes }}</span>
+            </div>
+
+            <p><strong>Stock disponible:</strong> {{ producto.stock }} unidades</p>
+
+            <a routerLink="/store/catalog" class="btn btn-outline-warning mt-4">
+                <i class="bi bi-arrow-left"></i> Volver al catalogo
+            </a>
+        </div>
+
+    </div>
+</div>
+} @else {
+<div class="text-center mt-5 text-light">
+    <div class="spinner-border text-warning" role="status"></div>
+    <p class="mt-2">Cargando los detalles de tu katana...</p>
+</div>
+}
