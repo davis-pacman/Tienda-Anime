@@ -39,7 +39,7 @@
                         </a>
                         <button
                             class="btn btn-warning btn-sm fw-bold d-flex align-items-center justify-content-center gap-2"
-                            [disabled]="producto.stock === 0">
+                            [disabled]="producto.stock === 0" (click)="agregarAlCarrito(producto)">
                             <i class="bi bi-cart-plus-fill"></i> Añadir
                         </button>
                     </div>

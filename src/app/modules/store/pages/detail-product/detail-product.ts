@@ -1,20 +1,25 @@
+
 import { Component, inject, Input, OnInit, signal } from '@angular/core';
+
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService } from '../../../../core/services/product-service';
 import { Product } from '../../../../core/model/product.interface';
-import { RouterLink } from '@angular/router';
+import { CartService } from '../../../../core/services/cart-service';
 
 @Component({
   selector: 'app-detail-product',
-  imports: [RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './detail-product.html',
   styleUrl: './detail-product.css',
 })
 export class DetailProduct implements OnInit {
   private productService = inject(ProductService);
-
+  private route = inject(ActivatedRoute);
+  private cartService = inject(CartService);
+  productos?: Product;
   producto = signal<Product | null>(null);
 
-  @Input() slug!: string;
 
   ngOnInit(): void {
     this.obtenerProductoBySlug();
@@ -30,4 +35,10 @@ export class DetailProduct implements OnInit {
       }
     })
   }
+  agregarAlCarrito(): void {
+    if (this.productos) {
+      this.cartService.addToCart(this.productos);
+    }
+  }
+
 }

@@ -7,8 +7,9 @@ export interface Product {
     categoria: string;
     stock: number;
     precioActual: number;
-    precioAntes: number;
-    descripcion: string;
+    precioAntes?: number | null;
     imagenUrl: string;
-    especificaiones: Specification[];
+    descripcion?: string;
+    esPersonalizado?: boolean;
+    especificaciones?: Array<{ nombre: string; valor: string }>;
 }

@@ -4,7 +4,11 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { DecimalPipe } from '@angular/common';
 import { ProductService } from '../../../../../core/services/product-service';
 import { Product } from '../../../../../core/model/product.interface';
+
 import { FilterService } from '../../../../../core/services/filter-service';
+
+import { CartService } from '../../../../../core/services/cart-service';
+
 
 @Component({
   selector: 'app-products',
@@ -15,7 +19,10 @@ import { FilterService } from '../../../../../core/services/filter-service';
 export class Products implements OnInit {
   private productoservice = inject(ProductService);
   private cdr = inject(ChangeDetectorRef);
+
   private filterService = inject(FilterService);
+
+  private cartService = inject(CartService);
 
   listProductos: Product[] = [];
 
@@ -51,5 +58,9 @@ export class Products implements OnInit {
         }
       })
     }
+  }
+
+  agregarAlCarrito(producto: Product): void {
+    this.cartService.addToCart(producto);
   }
 }
