@@ -1,0 +1,55 @@
+<section class="py-5 bg-black text-white min-vh-100">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-5">
+        <h2 class="fw-bold text-warning mb-3">Soporte y ayuda</h2>
+        <p class="text-white-50">¿Tienes dudas sobre tu pedido, envíos o personalizaciones? Nuestro equipo te ayuda rápidamente.</p>
+        <div class="card bg-dark border-secondary p-4">
+          <h5 class="text-light">Canales de contacto</h5>
+          <ul class="text-white-50 mb-0">
+            <li>WhatsApp: +51 999 999 999</li>
+            <li>Correo: soporte@akihabarastore.com</li>
+            <li>Horario: Lunes a sábado, 9:00 a 20:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="card bg-dark border-secondary p-4">
+          <h4 class="text-light mb-3">Enviar solicitud</h4>
+          @if (enviado) {
+            <div class="alert alert-success">Tu solicitud fue enviada correctamente. Te responderemos pronto.</div>
+          }
+          <form [formGroup]="supportForm" (ngSubmit)="submitTicket()" class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label text-white-50">Nombre</label>
+              <input formControlName="nombre" class="form-control bg-black text-white border-secondary" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-white-50">Correo</label>
+              <input formControlName="correo" type="email" class="form-control bg-black text-white border-secondary" />
+            </div>
+            <div class="col-12">
+              <label class="form-label text-white-50">Asunto</label>
+              <input formControlName="asunto" class="form-control bg-black text-white border-secondary" />
+            </div>
+            <div class="col-12">
+              <label class="form-label text-white-50">Mensaje</label>
+              <textarea formControlName="mensaje" rows="4" class="form-control bg-black text-white border-secondary"></textarea>
+            </div>
+            <div class="col-12">
+              <label class="form-label text-white-50">Prioridad</label>
+              <select formControlName="prioridad" class="form-select bg-black text-white border-secondary">
+                <option value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-warning fw-bold" type="submit">Enviar ticket</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

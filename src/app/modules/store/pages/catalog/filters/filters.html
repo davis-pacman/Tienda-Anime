@@ -15,12 +15,13 @@
     <!-- Filtros de categorías -->
 
     <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
-        <button class="btn btn-warning px-4 py-2 fw-semibold">✨ Todo</button>
-        <button class="btn btn-outline-success text-light border-secondary px-4 py-2">⚔️ Katanas</button>
-        <button class="btn btn-outline-success text-light border-secondary px-4 py-2">🔮 Figuras</button>
-        <button class="btn btn-outline-success text-light border-secondary px-4 py-2">📚 Mangas</button>
-        <button class="btn btn-outline-success text-light border-secondary px-4 py-2">👕 Ropas</button>
-        <button class="btn btn-outline-success text-light border-secondary px-4 py-2">🎨 Personalizados</button>
+        @for (category of listCategorias; track category.id) {
+        <button class="btn btn-outline-success border-secondary px-4 py-2 fw-semibold"
+            (click)="filtrar(category.nombre)" [class.btn-warning]="categorySig === category.nombre"
+            [class.btn-outline-success]="categorySig !== category.nombre">{{category.nombre}}</button>
+        }
+        <button class="btn btn-warning border-secondary px-4 py-2 fw-semibold" (click)="filtrar('')"
+            [class.btn-warning]="categorySig === ''" [class.btn-outline-success]="categorySig !== ''"> Todo</button>
     </div>
 
     <app-products></app-products>

@@ -1,0 +1,21 @@
+<section class="py-5 bg-black text-white min-vh-100">
+  <div class="container">
+    @if (post) {
+      <div class="card bg-dark border-secondary overflow-hidden">
+        <img [src]="post.imagenUrl" [alt]="post.titulo" class="img-fluid" style="max-height: 320px; object-fit: cover;" />
+        <div class="card-body p-4 p-lg-5">
+          <span class="badge bg-warning text-dark">{{ post.categoria }}</span>
+          <h2 class="fw-bold text-warning mt-3">{{ post.titulo }}</h2>
+          <p class="text-white-50">{{ post.fecha }} · {{ post.autor }} · {{ post.lecturaMinutos }} min de lectura</p>
+          <p class="lead text-white-50">{{ post.resumen }}</p>
+          <p class="text-light">{{ post.contenido }}</p>
+          <a routerLink="/store/blog" class="btn btn-outline-warning mt-3">Volver al blog</a>
+        </div>
+      </div>
+    } @else {
+      <div class="text-center py-5">
+        <h3 class="text-warning">Artículo no encontrado</h3>
+      </div>
+    }
+  </div>
+</section>

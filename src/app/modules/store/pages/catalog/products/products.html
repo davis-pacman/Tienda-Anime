@@ -33,13 +33,13 @@
                     </div>
 
                     <div class="d-grid gap-2">
-                        <a [routerLink]="['/tienda/producto', producto.id]"
+                        <a [routerLink]="['/store/productdetail', producto.slug]"
                             class="btn btn-outline-light btn-sm fw-semibold">
                             <i class="bi bi-eye"></i> Ver Detalles
                         </a>
                         <button
                             class="btn btn-warning btn-sm fw-bold d-flex align-items-center justify-content-center gap-2"
-                            [disabled]="producto.stock === 0">
+                            [disabled]="producto.stock === 0" (click)="agregarAlCarrito(producto)">
                             <i class="bi bi-cart-plus-fill"></i> Añadir
                         </button>
                     </div>

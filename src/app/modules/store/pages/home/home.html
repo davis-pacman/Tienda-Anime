@@ -92,7 +92,7 @@
                         o fanarts favoritos. ¡Tú imaginas, nosotros lo creamos!</p>
                 </div>
                 <div class="col-md-4 text-center text-md-end">
-                    <a routerLink="/store/personalizar-ropa" class="btn btn-info text-dark fw-bold btn-lg px-4">
+                    <a routerLink="/store/support" class="btn btn-info text-dark fw-bold btn-lg px-4">
                         Personalizar Ahora
                     </a>
                 </div>
@@ -145,11 +145,12 @@
                             </div>
 
                             <div class="d-grid gap-2">
-                                <a [routerLink]="['/tienda/producto', producto.id]"
+                                <a [routerLink]="['/store/productdetail', producto.id]"
                                     class="btn btn-outline-light btn-sm fw-semibold">
                                     <i class="bi bi-eye"></i> Ver Detalles
                                 </a>
-                                <button class="btn btn-outline-warning btn-sm w-100 fw-bold">
+                                <button class="btn btn-outline-warning btn-sm w-100 fw-bold"
+                                    (click)="agregarAlCarrito(producto)">
                                     <i class="bi bi-cart-plus"></i> Añadir
                                 </button>
                             </div>
