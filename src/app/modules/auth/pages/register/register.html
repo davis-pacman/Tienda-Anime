@@ -65,7 +65,7 @@
                         <span class="input-group-text bg-black border-2 text-white">
                             <i class="bi bi-envelope-fill"></i>
                         </span>
-                        <input #txtEmail type="email" id="registerEmail" formControlName="correo" name="correo"
+                        <input #txtEmail type="email" id="registerEmail" formControlName="correo" name="email"
                             placeholder="ejemplo@correo.com" class="form-control bg-warning text-white border-2"
                             required
                             [class.is-invalid]="userForm.get('correo')?.invalid && userForm.get('correo')?.touched || !validUser()">

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { BlogPost } from '../model/blog-post.interface';
+import { BlogPosts } from '../model/blog-posts.interface';
 import { SupportTicket } from '../model/support-ticket.interface';
 import { Order } from '../model/order.interface';
 
@@ -11,14 +11,14 @@ import { Order } from '../model/order.interface';
 export class StoreDataService {
   private readonly baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getBlogPosts(): Observable<BlogPost[]> {
-    return this.http.get<BlogPost[]>(`${this.baseUrl}/blogPosts`);
+  getBlogPosts(): Observable<BlogPosts[]> {
+    return this.http.get<BlogPosts[]>(`${this.baseUrl}/blogPosts`);
   }
 
-  getBlogPostBySlug(slug: string): Observable<BlogPost | undefined> {
-    return this.http.get<BlogPost[]>(`${this.baseUrl}/blogPosts?slug=${slug}`).pipe(map((posts) => posts[0]));
+  getBlogPostBySlug(slug: string): Observable<BlogPosts | undefined> {
+    return this.http.get<BlogPosts[]>(`${this.baseUrl}/blogPosts?slug=${slug}`).pipe(map((posts) => posts[0]));
   }
 
   saveSupportTicket(ticket: SupportTicket): Observable<SupportTicket> {

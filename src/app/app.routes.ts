@@ -4,6 +4,10 @@ import { Home } from './modules/store/pages/home/home';
 import { Filters } from './modules/store/pages/catalog/filters/filters';
 import { Login } from './modules/auth/pages/login/login';
 import { Register } from './modules/auth/pages/register/register';
+import { Dashboard } from './modules/admin/pages/dashboard/dashboard';
+import { ListProducts } from './modules/admin/pages/list-products/list-products';
+import { NewProduct } from './modules/admin/pages/new-product/new-product';
+import { AccountConfiguration } from './modules/profile/pages/account-configuration/account-configuration';
 
 export const routes: Routes = [
     {
@@ -18,6 +22,16 @@ export const routes: Routes = [
             { path: '', redirectTo: 'login', pathMatch: 'full' },
             { path: 'login', component: Login },
             { path: 'register', component: Register }
+        ]
+    },
+    {
+        path: 'admin',
+        loadComponent: () => import('./modules/admin/layout-admin/layout-admin').then(m => m.LayoutAdmin),
+        children: [
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            { path: 'dashboard', component: Dashboard },
+            { path: 'listproducts', component: ListProducts },
+            { path: 'newproduct', component: NewProduct }
         ]
     },
     {
@@ -38,6 +52,14 @@ export const routes: Routes = [
             { path: 'terms', loadComponent: () => import('./modules/store/pages/terms/terms').then(m => m.Terms) },
 
             { path: '**', redirectTo: 'catalog', pathMatch: 'full' }
+        ]
+    },
+    {
+        path: 'profile',
+        loadComponent: () => import('./modules/profile/layout-profile/layout-profile').then(m => m.LayoutProfile),
+        children: [
+            { path: '', redirectTo: 'accountconfiguration', pathMatch: 'full' },
+            { path: 'accountconfiguration', component: AccountConfiguration }
         ]
     },
     {

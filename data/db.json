@@ -4,24 +4,16 @@
       "id": "1",
       "role": "admin",
       "nombre": "admin",
-      "correo": "admin@admin.pe",
-      "contraseña": "admin"
-    },
-    {
-      "role": "cliente",
-      "nombre": "asd",
-      "apellidos": "asddddd",
-      "correo": "davisquispe278@gmail.com",
-      "contrasenia": "asdasdasdasd",
-      "id": "9AqEaL7C4wE"
+      "correo": "admin@admin.com",
+      "contrasenia": "admin1234"
     },
     {
       "role": "cliente",
       "nombre": "Davis",
       "apellidos": "Quispe Barja",
-      "correo": "davisquispe278@xd.com",
-      "contrasenia": "asdasdoo",
-      "id": "Wyye76Dr3ak"
+      "correo": "davisquispe278@gmail.com",
+      "contrasenia": "davis123",
+      "id": "kUzlG98fdAU"
     }
   ],
   "roles": [

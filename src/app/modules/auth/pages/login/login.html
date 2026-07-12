@@ -7,17 +7,33 @@
 
             <p class="text-white-50 small mb-4">Ingresa tus credenciales para continuar tu aventura</p>
 
-            <form (submit)="$event.preventDefault(); manejarLogin(txtEmail.value, txtPassword.value)">
+            <form [formGroup]="userLogin" (ngSubmit)="iniciarSesion()" novalidate>
 
                 <div class="mb-3 text-start">
                     <label for="loginEmail" class="form-label text-light small fw-semibold">Correo
                         Electrónico</label>
                     <div class="input-group">
-                        <span class="input-group-text bg-black border-secondary text-white-50">
+                        <span class="input-group-text bg-black border-2 text-white-50">
                             <i class="bi bi-envelope-fill"></i>
                         </span>
-                        <input #txtEmail type="email" id="loginEmail" name="email" placeholder="ejemplo@correo.com"
-                            class="form-control bg-dark text-white border-secondary opacity-75" required>
+                        <input #txtEmail type="email" id="loginEmail" formControlName="correo" name="email"
+                            placeholder="ejemplo@correo.com"
+                            class="form-control bg-warning text-white border-2 opacity-75" required
+                            [class.is-invalid]="userLogin.get('correo')?.invalid && userLogin.get('correo')?.touched || userValid()==1">
+
+                        @if (userLogin.get('correo')?.invalid && userLogin.get('correo')?.touched || userValid()==1) {
+                        <div class="invalid-feedback">
+                            @if (userLogin.get('correo')?.hasError('required')) {
+                            <span class="text-primary"> El correo es obligatorio.</span>
+                            }
+                            @if (userLogin.get('correo')?.hasError('email')) {
+                            <span> Por favor, escribe un correo válido (ejemplo: amber@gmail.com).</span>
+                            }
+                            @if (userValid()==1) {
+                            <span>{{message()}}</span>
+                            }
+                        </div>
+                        }
                     </div>
                 </div>
 
@@ -25,14 +41,30 @@
                     <div class="d-flex justify-content-between align-items-center mb-1">
                         <label for="loginPassword"
                             class="form-label text-light small fw-semibold mb-0">Contraseña</label>
-                        <a href="#" class="text-warning text-decoration-none small opacity-75">¿La olvidaste?</a>
                     </div>
                     <div class="input-group">
-                        <span class="input-group-text bg-black border-secondary text-white-50">
+                        <span class="input-group-text bg-black border-2 text-white-50">
                             <i class="bi bi-lock-fill"></i>
                         </span>
-                        <input #txtPassword type="password" id="loginPassword" name="password" placeholder="••••••••"
-                            class="form-control bg-dark text-white border-secondary opacity-75" required>
+                        <input #txtPassword type="password" id="loginPassword" formControlName="contrasenia"
+                            name="password" placeholder="••••••••"
+                            class="form-control bg-warning text-white border-2 opacity-75" required
+                            [class.is-invalid]="userLogin.get('contrasenia')?.invalid && userLogin.get('contrasenia')?.touched || userValid()==2">
+
+                        @if (userLogin.get('contrasenia')?.invalid && userLogin.get('contrasenia')?.touched ||
+                        userValid()==2){
+                        <div class="invalid-feedback">
+                            @if (userLogin.get('contrasenia')?.hasError('required')) {
+                            <span class="text-primary"> La contraseña es obligatorio.</span>
+                            }
+                            @if (userLogin.get('contrasenia')?.hasError('minlength')) {
+                            <span> Por favor, escribe una contraseña válido (ejemplo: amber@gmail.com).</span>
+                            }
+                            @if (userValid()==2) {
+                            <span>{{message()}}</span>
+                            }
+                        </div>
+                        }
                     </div>
                 </div>
 

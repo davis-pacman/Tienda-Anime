@@ -17,9 +17,11 @@ export class DetailProduct implements OnInit {
   private productService = inject(ProductService);
   private route = inject(ActivatedRoute);
   private cartService = inject(CartService);
-  productos?: Product;
   producto = signal<Product | null>(null);
 
+  productos?: Product;
+
+  @Input() slug!: string;
 
   ngOnInit(): void {
     this.obtenerProductoBySlug();
@@ -33,8 +35,9 @@ export class DetailProduct implements OnInit {
       error: (err) => {
         console.error("ERROR AL OBTENER EL PRODUCTO:", err)
       }
-    })
+    });
   }
+
   agregarAlCarrito(): void {
     if (this.productos) {
       this.cartService.addToCart(this.productos);

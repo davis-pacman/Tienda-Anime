@@ -2,14 +2,14 @@ import { Specification } from "./specification.interface";
 
 export interface Product {
     id: number;
-    nombre: string;
     slug: string;
+    esPersonalizado?: boolean;
+    imagenUrl: string;
+    nombre: string;
     categoria: string;
     stock: number;
     precioActual: number;
-    precioAntes?: number | null;
-    imagenUrl: string;
-    descripcion?: string;
-    esPersonalizado?: boolean;
-    especificaciones?: Array<{ nombre: string; valor: string }>;
+    precioAntes?: number;
+    descripcion: string;
+    especificaiones: Specification[];
 }

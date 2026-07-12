@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { StoreDataService } from '../../../../core/services/store-data-service';
-import { BlogPost } from '../../../../core/model/blog-post.interface';
+import { BlogPosts } from '../../../../core/model/blog-posts.interface';
 
 @Component({
   selector: 'app-blog-post',
@@ -13,7 +13,7 @@ import { BlogPost } from '../../../../core/model/blog-post.interface';
 export class BlogPost implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly storeDataService = inject(StoreDataService);
-  post?: BlogPost;
+  post?: BlogPosts;
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug') ?? '';
