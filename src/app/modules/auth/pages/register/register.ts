@@ -8,12 +8,11 @@ import { UserService } from '../../../../core/services/user-service';
   selector: 'app-register',
   imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './register.html',
-  styleUrl: './register.css',
 })
 export class Register {
-  private router = inject(Router);
-  private formB = inject(FormBuilder);
-  private userService = inject(UserService);
+  private readonly router = inject(Router);
+  private readonly formB = inject(FormBuilder);
+  private readonly userService = inject(UserService);
 
   public userForm: FormGroup = this.formB.group({
     nombre: ['', [Validators.required, Validators.minLength(3)]],
@@ -57,9 +56,9 @@ export class Register {
           this.userService.getUsers().subscribe({
             next: (usuarios) => {
 
-              // 2. 🎯 CÁLCULO DEL ID MANUAL SIMULANDO AUTOINCREMENTAL
-              // Si no hay usuarios, el primer ID será 1.
-              // Si hay usuarios, buscamos el ID máximo usando Math.max y le sumamos 1.
+              // 2. Ã°Å¸Å½Â¯ CÃƒÂLCULO DEL ID MANUAL SIMULANDO AUTOINCREMENTAL
+              // Si no hay usuarios, el primer ID serÃƒÂ¡ 1.
+              // Si hay usuarios, buscamos el ID mÃƒÂ¡ximo usando Math.max y le sumamos 1.
               const nuevoId: number = usuarios.length > 0
                 ? Math.max(...usuarios.map(u => Number(u.id))) + 1
                 : 1;

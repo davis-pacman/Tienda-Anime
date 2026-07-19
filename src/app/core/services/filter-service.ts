@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class FilterService {
-  private categorySignal = signal<string>('');
+  private readonly categorySignal = signal<string>('');
 
   readonly categoryAtual = this.categorySignal.asReadonly();
 

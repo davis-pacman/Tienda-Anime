@@ -6,7 +6,7 @@ import { User } from '../model/user.interface';
   providedIn: 'root',
 })
 export class AuthService {
-  private platformId = inject(PLATFORM_ID);
+  private readonly platformId = inject(PLATFORM_ID);
 
   public currentUser = signal<User | null>(
     isPlatformBrowser(this.platformId)

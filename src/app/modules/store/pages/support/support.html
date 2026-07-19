@@ -21,24 +21,24 @@
           }
           <form [formGroup]="supportForm" (ngSubmit)="submitTicket()" class="row g-3">
             <div class="col-md-6">
-              <label class="form-label text-white-50">Nombre</label>
-              <input formControlName="nombre" class="form-control bg-black text-white border-secondary" />
+              <label for="nombre" class="form-label text-white-50">Nombre</label>
+              <input id="nombre" formControlName="nombre" class="form-control bg-black text-white border-secondary" />
             </div>
             <div class="col-md-6">
-              <label class="form-label text-white-50">Correo</label>
-              <input formControlName="correo" type="email" class="form-control bg-black text-white border-secondary" />
+              <label for="correo" class="form-label text-white-50">Correo</label>
+              <input id="correo" formControlName="correo" type="email" class="form-control bg-black text-white border-secondary" />
             </div>
             <div class="col-12">
-              <label class="form-label text-white-50">Asunto</label>
-              <input formControlName="asunto" class="form-control bg-black text-white border-secondary" />
+              <label for="asunto" class="form-label text-white-50">Asunto</label>
+              <input id="asunto" formControlName="asunto" class="form-control bg-black text-white border-secondary" />
             </div>
             <div class="col-12">
-              <label class="form-label text-white-50">Mensaje</label>
-              <textarea formControlName="mensaje" rows="4" class="form-control bg-black text-white border-secondary"></textarea>
+              <label for="mensaje" class="form-label text-white-50">Mensaje</label>
+              <textarea id="mensaje" formControlName="mensaje" rows="4" class="form-control bg-black text-white border-secondary"></textarea>
             </div>
             <div class="col-12">
-              <label class="form-label text-white-50">Prioridad</label>
-              <select formControlName="prioridad" class="form-select bg-black text-white border-secondary">
+              <label for="prioridad" class="form-label text-white-50">Prioridad</label>
+              <select id="prioridad" formControlName="prioridad" class="form-select bg-black text-white border-secondary">
                 <option value="baja">Baja</option>
                 <option value="media">Media</option>
                 <option value="alta">Alta</option>

@@ -22,10 +22,10 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropProductos" role="button"
+                    <button class="nav-link dropdown-toggle border-0 bg-transparent" id="dropProductos"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-tags-fill"></i> Catálogo
-                    </a>
+                    </button>
 
                     <ul class="dropdown-menu dropdown-menu-dark border-secondary" aria-labelledby="dropProductos">
                         <li><a class="dropdown-menu-item dropdown-item" routerLink="/store/catalog"
@@ -63,9 +63,9 @@
             </ul>
 
             <div class="mx-lg-3 my-2 my-lg-0 flex-grow-1" style="max-width: 400px;">
-                <form class="d-flex shadow-sm" role="search">
+                <form class="d-flex shadow-sm" role="search" (submit)="buscar(searchInput.value); $event.preventDefault()">
                     <div class="input-group">
-                        <input type="search" id="buscadorHeader" name="BarraDeBusqueda"
+                        <input #searchInput type="search" id="buscadorHeader" name="BarraDeBusqueda"
                             placeholder="¿Qué artículo buscas hoy?"
                             class="form-control bg-light bg-opacity-75 text-success placeholder-glow border-secondary fs-5 text-opacity-50">
                         <button class="btn btn-warning fw-bold" type="submit"><i class="bi bi-search"></i></button>
@@ -90,10 +90,10 @@
 
                 @else {
                 <div class="nav-item dropdown border-warning border-2 btn">
-                    <a class="nav-link dropdown-toggle text-success" href="#" id="dropUserOptions" role="button"
+                    <button class="nav-link dropdown-toggle text-success border-0 bg-transparent w-100 text-start" id="dropUserOptions"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <strong class="text-danger">{{ user()?.nombre }}</strong>
-                    </a>
+                    </button>
 
                     <ul class="dropdown-menu dropdown-menu-dark border-secondary" aria-labelledby="dropUserOptions">
 

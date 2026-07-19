@@ -11,7 +11,7 @@ import { Order } from '../model/order.interface';
 export class StoreDataService {
   private readonly baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   getBlogPosts(): Observable<BlogPosts[]> {
     return this.http.get<BlogPosts[]>(`${this.baseUrl}/blogPosts`);
@@ -35,5 +35,13 @@ export class StoreDataService {
       estado: 'confirmado',
       fecha: new Date().toISOString(),
     });
+  }
+
+  getOrderById(id: string): Observable<Order> {
+    return this.http.get<Order>(`${this.baseUrl}/orders/${id}`);
+  }
+
+  getOrdersByEmail(email: string): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.baseUrl}/orders?correo=${email}`);
   }
 }

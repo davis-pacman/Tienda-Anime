@@ -11,12 +11,11 @@ import { CartService } from '../../../../core/services/cart-service';
   selector: 'app-detail-product',
   imports: [CommonModule, RouterLink],
   templateUrl: './detail-product.html',
-  styleUrl: './detail-product.css',
 })
 export class DetailProduct implements OnInit {
-  private productService = inject(ProductService);
-  private route = inject(ActivatedRoute);
-  private cartService = inject(CartService);
+  private readonly productService = inject(ProductService);
+  private readonly route = inject(ActivatedRoute);
+  private readonly cartService = inject(CartService);
   producto = signal<Product | null>(null);
 
   productos?: Product;

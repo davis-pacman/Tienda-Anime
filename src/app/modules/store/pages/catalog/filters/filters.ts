@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { Products } from "../products/products";
-import { RouterLink } from "@angular/router";
 import { FilterService } from '../../../../../core/services/filter-service';
 import { Category } from '../../../../../core/model/category.interface';
 import { CategoryService } from '../../../../../core/services/category-service';
@@ -9,12 +8,11 @@ import { CategoryService } from '../../../../../core/services/category-service';
   selector: 'app-filters',
   imports: [Products],
   templateUrl: './filters.html',
-  styleUrl: './filters.css',
 })
 export class Filters implements OnInit {
-  private filterService = inject(FilterService);
-  private categoryService = inject(CategoryService);
-  private cdr = inject(ChangeDetectorRef);
+  private readonly filterService = inject(FilterService);
+  private readonly categoryService = inject(CategoryService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   categorySig = this.filterService.categoryAtual();
 
@@ -32,9 +30,6 @@ export class Filters implements OnInit {
     });
   }
 
-  ObtenerCategorias(): void {
-
-  }
 
   filtrar(cat: string) {
     this.filterService.updateCategory(cat);

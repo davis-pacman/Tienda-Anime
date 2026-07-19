@@ -29,11 +29,11 @@
                   <p class="text-warning fw-bold mb-0">S/ {{ item.precio | number: '1.2-2' }}</p>
                 </div>
                 <div class="col-md-3 p-3 text-end">
-                  <div class="btn-group mb-3" role="group">
+                  <fieldset class="btn-group mb-3">
                     <button class="btn btn-outline-light btn-sm" (click)="decreaseQuantity(item.productoId)">-</button>
                     <span class="btn btn-outline-secondary btn-sm disabled">{{ item.cantidad }}</span>
                     <button class="btn btn-outline-light btn-sm" (click)="increaseQuantity(item.productoId)">+</button>
-                  </div>
+                  </fieldset>
                   <div class="d-flex justify-content-end gap-2">
                     <button class="btn btn-outline-danger btn-sm" (click)="removeItem(item.productoId)">Eliminar</button>
                   </div>
