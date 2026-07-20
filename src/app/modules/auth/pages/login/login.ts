@@ -9,13 +9,12 @@ import { User } from '../../../../core/model/user.interface';
   selector: 'app-login',
   imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './login.html',
-  styleUrl: './login.css',
 })
 export class Login {
-  private userService = inject(UserService)
-  private authService = inject(AuthService);
-  private router = inject(Router);
-  private formB = inject(FormBuilder);
+  private readonly userService = inject(UserService)
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
+  private readonly formB = inject(FormBuilder);
 
   public userLogin: FormGroup = this.formB.group({
     correo: ['', [Validators.required, Validators.email]],
@@ -60,14 +59,13 @@ export class Login {
       } else {
         this.userValid.set(1);
         this.message.set('Correo no encontrado');
-        return;
       }
     });
   }
 
 
-  manejarLogin(correo: string, contraseña: string): void {
-    if (correo && contraseña) {
+  manejarLogin(correo: string, contrasenia: string): void {
+    if (correo && contrasenia) {
       this.router.navigate(['/store/home']);
     }
   }

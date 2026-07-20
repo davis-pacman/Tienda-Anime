@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class CategoryService {
   private baseUrl = 'http://localhost:3000/categorias';
 
-  private http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   getCategorias(): Observable<Category[]> {
     return this.http.get<Category[]>(this.baseUrl);

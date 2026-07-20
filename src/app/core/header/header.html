@@ -40,8 +40,6 @@
                 </li>
             </ul>
 
-
-
             <div class="d-flex align-items-center gap-3 interact-buttons">
 
                 <a routerLink="/store/cart" class="btn btn-outline-warning position-relative px-3" title="Ver Carrito">
@@ -59,10 +57,10 @@
 
                 @else {
                 <div class="nav-item dropdown border-warning border-2 btn">
-                    <a class="nav-link dropdown-toggle text-success" href="#" id="dropUserOptions" role="button"
+                    <button class="nav-link dropdown-toggle text-success border-0 bg-transparent w-100 text-start" id="dropUserOptions"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <strong class="text-danger">{{ user()?.nombre }}</strong>
-                    </a>
+                    </button>
 
                     <ul class="dropdown-menu dropdown-menu-dark border-secondary" aria-labelledby="dropUserOptions">
 

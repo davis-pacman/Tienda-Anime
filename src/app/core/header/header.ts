@@ -11,8 +11,8 @@ import { AuthService } from '../services/auth-service';
 })
 export class Header {
   private readonly cartService = inject(CartService);
-  private authService = inject(AuthService);
-  private router = inject(Router);
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
   public user = this.authService.currentUser;
 
@@ -23,5 +23,11 @@ export class Header {
   cerrarSesion() {
     this.authService.logout();
     this.router.navigate(['auth/login']);
+  }
+
+  buscar(termino: string) {
+    if (termino.trim()) {
+      this.router.navigate(['/store/catalog'], { queryParams: { q: termino.trim() } });
+    }
   }
 }

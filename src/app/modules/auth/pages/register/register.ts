@@ -8,12 +8,11 @@ import { UserService } from '../../../../core/services/user-service';
   selector: 'app-register',
   imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './register.html',
-  styleUrl: './register.css',
 })
 export class Register {
-  private router = inject(Router);
-  private formB = inject(FormBuilder);
-  private userService = inject(UserService);
+  private readonly router = inject(Router);
+  private readonly formB = inject(FormBuilder);
+  private readonly userService = inject(UserService);
 
   public userForm: FormGroup = this.formB.group({
     nombre: ['', [Validators.required, Validators.minLength(3)]],

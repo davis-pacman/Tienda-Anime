@@ -11,7 +11,6 @@ import { CartService } from '../../../../core/services/cart-service';
   selector: 'app-detail-product',
   imports: [CommonModule, RouterLink],
   templateUrl: './detail-product.html',
-  styleUrl: './detail-product.css',
 })
 export class DetailProduct implements OnInit {
   private productService = inject(ProductService);

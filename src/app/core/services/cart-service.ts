@@ -69,7 +69,7 @@ export class CartService {
   }
 
   private loadCart(): CartItem[] {
-    if (typeof window === 'undefined') {
+    if (typeof globalThis.window === 'undefined') {
       return [];
     }
 

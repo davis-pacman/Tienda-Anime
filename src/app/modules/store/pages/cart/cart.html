@@ -15,28 +15,29 @@
       <p class="text-white-50">Agrega productos desde el catálogo para empezar tu compra.</p>
     </div>
     } @else {
-    <div class="row g-4">
-      <div class="col-lg-8">
-        @for (item of items(); track item.productoId) {
-        <div class="card bg-dark border-secondary mb-3">
-          <div class="row g-0 align-items-center">
-            <div class="col-md-3 p-3">
-              <img [src]="item.imagenUrl" [alt]="item.nombre" class="img-fluid rounded"
-                style="max-height: 140px; object-fit: cover;" />
-            </div>
-            <div class="col-md-6 p-3">
-              <h5 class="fw-bold text-white">{{ item.nombre }}</h5>
-              <p class="text-white-50 mb-2">{{ item.categoria }}</p>
-              <p class="text-warning fw-bold mb-0">S/ {{ item.precio | number: '1.2-2' }}</p>
-            </div>
-            <div class="col-md-3 p-3 text-end">
-              <div class="btn-group mb-3" role="group">
-                <button class="btn btn-outline-light btn-sm" (click)="decreaseQuantity(item.productoId)">-</button>
-                <span class="btn btn-outline-secondary btn-sm disabled">{{ item.cantidad }}</span>
-                <button class="btn btn-outline-light btn-sm" (click)="increaseQuantity(item.productoId)">+</button>
-              </div>
-              <div class="d-flex justify-content-end gap-2">
-                <button class="btn btn-outline-danger btn-sm" (click)="removeItem(item.productoId)">Eliminar</button>
+      <div class="row g-4">
+        <div class="col-lg-8">
+          @for (item of items(); track item.productoId) {
+            <div class="card bg-dark border-secondary mb-3">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-3 p-3">
+                  <img [src]="item.imagenUrl" [alt]="item.nombre" class="img-fluid rounded" style="max-height: 140px; object-fit: cover;" />
+                </div>
+                <div class="col-md-6 p-3">
+                  <h5 class="fw-bold text-white">{{ item.nombre }}</h5>
+                  <p class="text-white-50 mb-2">{{ item.categoria }}</p>
+                  <p class="text-warning fw-bold mb-0">S/ {{ item.precio | number: '1.2-2' }}</p>
+                </div>
+                <div class="col-md-3 p-3 text-end">
+                  <fieldset class="btn-group mb-3">
+                    <button class="btn btn-outline-light btn-sm" (click)="decreaseQuantity(item.productoId)">-</button>
+                    <span class="btn btn-outline-secondary btn-sm disabled">{{ item.cantidad }}</span>
+                    <button class="btn btn-outline-light btn-sm" (click)="increaseQuantity(item.productoId)">+</button>
+                  </fieldset>
+                  <div class="d-flex justify-content-end gap-2">
+                    <button class="btn btn-outline-danger btn-sm" (click)="removeItem(item.productoId)">Eliminar</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

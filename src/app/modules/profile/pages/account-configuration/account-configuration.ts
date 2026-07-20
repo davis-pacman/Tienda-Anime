@@ -10,7 +10,6 @@ import { User } from '../../../../core/model/user.interface';
   selector: 'app-account-configuration',
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './account-configuration.html',
-  styleUrl: './account-configuration.css',
 })
 export class AccountConfiguration implements OnInit {
 
@@ -19,6 +18,35 @@ export class AccountConfiguration implements OnInit {
   private userService = inject(UserService);
 
   public user = this.authService.currentUser;
+  
+  public orders = signal<Order[]>([]);
+  public loadingOrders = signal<boolean>(true);
+
+  private userEffect = effect(() => {
+    const currentUser = this.user();
+    if (currentUser?.correo) {
+      this.fetchOrders(currentUser.correo);
+    } else {
+      this.loadingOrders.set(false);
+    }
+  });
+
+  ngOnInit(): void {
+    // handled by effect
+  }
+
+  fetchOrders(correo: string) {
+    this.storeDataService.getOrdersByEmail(correo).subscribe({
+      next: (orders) => {
+        this.orders.set(orders);
+        this.loadingOrders.set(false);
+      },
+      error: (err) => {
+        console.error('Error fetching orders', err);
+        this.loadingOrders.set(false);
+      }
+    });
+  }
 
   public userForm: FormGroup = this.formB.group({
     nombre: ['', [Validators.required, Validators.minLength(3)]],

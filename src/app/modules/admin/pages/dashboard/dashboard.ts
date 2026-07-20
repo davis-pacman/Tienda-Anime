@@ -6,7 +6,6 @@ import { User } from '../../../../core/model/user.interface';
   selector: 'app-dashboard',
   imports: [],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnInit {
   private userService = inject(UserService);

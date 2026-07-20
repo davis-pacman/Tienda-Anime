@@ -7,6 +7,7 @@ import { StoreDataService } from '../../../../core/services/store-data-service';
   selector: 'app-support',
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './support.html',
+
   styleUrl: './support.css',
 })
 export class Support {

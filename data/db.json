@@ -18,6 +18,14 @@
     },
     {
       "role": "cliente",
+      "nombre": "Jefferson",
+      "apellidos": "FarfÃ¡n Guadalupe",
+      "correo": "correodediddy@gmail.com",
+      "contrasenia": "diddy123",
+      "id": "11hWZ0sqN8M"
+    },
+    {
+      "role": "cliente",
       "nombre": "Carlos",
       "apellidos": "Flores Gonzales",
       "correo": "carlosFG@gmail.com",
@@ -98,11 +106,11 @@
       "especificaciones": [
         {
           "nombre": "Material",
-          "valor": "100% Algodón Premium (20 al hilo)"
+          "valor": "100% AlgodÃ³n Premium (20 al hilo)"
         },
         {
           "nombre": "Tipo de Estampado",
-          "valor": "Serigrafía textil de alta durabilidad"
+          "valor": "SerigrafÃ­a textil de alta durabilidad"
         },
         {
           "nombre": "Corte / Fit",
@@ -118,7 +126,7 @@
         },
         {
           "nombre": "Instrucciones de Lavado",
-          "valor": "Lavar a máquina con agua fría, voltear la prenda antes de lavar"
+          "valor": "Lavar a mÃ¡quina con agua frÃ­a, voltear la prenda antes de lavar"
         }
       ]
     },
@@ -147,7 +155,7 @@
           "valor": "Madera lacada con acabados dorados"
         },
         {
-          "nombre": "Peso apróx.",
+          "nombre": "Peso aprÃ³x.",
           "valor": "1.2 kg"
         }
       ]
@@ -166,19 +174,19 @@
       "especificaciones": [
         {
           "nombre": "Editorial",
-          "valor": "Panini Cómics / Ivrea"
+          "valor": "Panini CÃ³mics / Ivrea"
         },
         {
-          "nombre": "Páginas",
+          "nombre": "PÃ¡ginas",
           "valor": "192"
         },
         {
           "nombre": "Idioma",
-          "valor": "Español"
+          "valor": "EspaÃ±ol"
         },
         {
-          "nombre": "Tipo de encuadernación",
-          "valor": "Rústica con sobrecubierta (Tapa blanda)"
+          "nombre": "Tipo de encuadernaciÃ³n",
+          "valor": "RÃºstica con sobrecubierta (Tapa blanda)"
         }
       ]
     },
@@ -201,5 +209,127 @@
       ]
     }
   ],
+  "blogPosts": [
+    {
+      "id": "1",
+      "titulo": "Guía para elegir la figura perfecta de tu saga favorita",
+      "slug": "guia-figura-perfecta",
+      "resumen": "Descubre cómo elegir una figura que combine calidad, precio y estética.",
+      "contenido": "Una figura de colección debe cuidarse con muchos factores: escala, detalle, materiales y compatibilidad con tu espacio.\n\nPara empezar, debes conocer las principales marcas como Bandai, Good Smile Company y Kotobukiya, ya que garantizan acabados precisos y pintura duradera. Además, es importante que decidas si prefieres figuras articuladas (figmas) para cambiar sus poses, o estatuas (escalas) que mantienen una pose épica fija.\n\nPor último, ¡no te olvides del espacio! Antes de comprar esa figura escala 1/4 de 40 centímetros, asegúrate de tener una repisa segura, alejada de la luz solar directa para evitar la decoloración.",
+      "categoria": "Guías",
+      "fecha": "2026-06-18",
+      "autor": "Akihabara Team",
+      "imagenUrl": "products_images/figura_blog.jpg",
+      "lecturaMinutos": 4,
+      "destacado": true
+    },
+    {
+      "id": "2",
+      "titulo": "Cómo cuidar tu katana réplica y mantenerla impecable",
+      "slug": "como-cuidar-tu-katana",
+      "resumen": "Consejos rápidos para conservar tus réplicas de espada en perfecto estado.",
+      "contenido": "La mejor manera de cuidar una réplica es limpiarla con paño suave y evitar la humedad.\n\nLas katanas de acero al carbono son propensas a oxidarse si se dejan expuestas al ambiente húmedo sin protección. Te recomendamos usar aceite mineral ligero (como aceite de clavo o choji) y aplicarlo suavemente con un paño de algodón cada cierto tiempo.\n\nNunca toques la hoja con los dedos directamente, ya que la acidez natural de la piel puede dejar marcas que, con el tiempo, corroerán el metal. Mantén siempre tu espada en su saya (vaina) cuando no esté en exhibición o uso de cosplay.",
+      "categoria": "Consejos",
+      "fecha": "2026-06-22",
+      "autor": "Equipo de soporte",
+      "imagenUrl": "products_images/katana_blog.jpg",
+      "lecturaMinutos": 3
+    },
+    {
+      "id": "3",
+      "titulo": "Reseña de All You Need Is Kill: El origen de Edge of Tomorrow",
+      "slug": "resena-all-you-need-is-kill",
+      "resumen": "Un vistazo profundo al manga que inspiró la película de Hollywood.",
+      "contenido": "Takeshi Obata nos entrega un arte increíble para acompañar esta historia de bucles temporales y aliens...\n\nSi alguna vez viste la película 'Edge of Tomorrow' (Al filo del mañana) con Tom Cruise, te sorprenderá saber que está basada en la novela ligera y manga 'All You Need Is Kill'. El manga, ilustrado por el legendario creador de Death Note, lleva el nivel gráfico a un extremo espectacular.\n\nLa premisa de morir y revivir un mismo día mientras intentas volverte más fuerte y encontrar la forma de derrotar a los Mimics (una raza alienígena implacable) te mantiene atrapado desde el primer capítulo. Es un *seinen* obligatorio para cualquier amante de la acción, el sci-fi y el misterio.",
+      "categoria": "Reseñas",
+      "fecha": "2026-07-01",
+      "autor": "Akihabara Team",
+      "imagenUrl": "products_images/Allyouneediskill_blog.png",
+      "lecturaMinutos": 5,
+      "destacado": true
+    },
+    {
+      "id": "4",
+      "titulo": "Top 5 Katanas de Anime que necesitas en tu colección",
+      "slug": "top-5-katanas-anime",
+      "resumen": "Desde Enma hasta la Sakabato, conoce las mejores réplicas de espadas.",
+      "contenido": "Las katanas siempre han tenido un lugar especial en el anime. Aquí repasamos las 5 mejores opciones para exhibir en tu cuarto.\n\n5. **Nichirin de Tanjiro (Demon Slayer)**: Su hoja negra es un clásico instantáneo que todo fan reconoce.\n4. **Zangetsu (Bleach)**: La enorme espada de Ichigo no pasa desapercibida por su brutal forma de cuchillo de carnicero gigante.\n3. **Elucidator (Sword Art Online)**: La espada negra de Kirito tiene un diseño pulido y elegante, perfecta para decorar una sala gamer.\n2. **Sakabato (Rurouni Kenshin)**: La icónica espada de filo invertido que refleja la filosofía pacífica pero letal de Kenshin Himura.\n1. **Enma / Wado Ichimonji (One Piece)**: Zoro porta las katanas con más prestigio del mundo anime, y tener una réplica de alguna de las 21 O Wazamono es el sueño de cualquier pirata.",
+      "categoria": "Listas",
+      "fecha": "2026-07-05",
+      "autor": "Experto en Katanas",
+      "imagenUrl": "products_images/top5katanas_blog.webp",
+      "lecturaMinutos": 6,
+      "destacado": false
+    }
+  ],
+  "orders": [
+    {
+      "clienteNombre": "Diddy",
+      "correo": "correodediddy@gmail.com",
+      "telefono": "956456321",
+      "direccion": "Calle Bolivar 12 Lote 6",
+      "metodoPago": "Yape/Plin",
+      "observacion": "",
+      "items": [
+        {
+          "productoId": "2",
+          "nombre": "Camiseta de Naruto",
+          "precio": 19.99,
+          "cantidad": 1,
+          "imagenUrl": "products_images/camiseta_de_naruto.jpg"
+        }
+      ],
+      "subtotal": 19.99,
+      "total": 19.99,
+      "estado": "confirmado",
+      "fecha": "2026-07-09T01:24:46.434Z",
+      "id": "mTTB59wOLpI"
+    },
+    {
+      "clienteNombre": "Diddy",
+      "correo": "correodediddy@gmail.com",
+      "telefono": "789654123",
+      "direccion": "Calle El Muelle ",
+      "metodoPago": "Yape/Plin",
+      "observacion": "",
+      "items": [
+        {
+          "productoId": "15",
+          "nombre": "Casaca MIR",
+          "precio": 70,
+          "cantidad": 1,
+          "imagenUrl": "products_images/MIR.jpg"
+        }
+      ],
+      "subtotal": 70,
+      "total": 70,
+      "estado": "confirmado",
+      "fecha": "2026-07-09T21:10:58.159Z",
+      "id": "SPcMFWSRpaA"
+    },
+    {
+      "clienteNombre": "Jefferson Agustin Farfán Guadalupe",
+      "correo": "correodediddy@gmail.com",
+      "telefono": "+51987654321",
+      "direccion": "San Isidro",
+      "metodoPago": "Yape/Plin",
+      "observacion": "",
+      "items": [
+        {
+          "productoId": "3",
+          "nombre": "Katana Enma - Roronoa Zoro (One Piece)",
+          "precio": 149.99,
+          "cantidad": 1,
+          "imagenUrl": "products_images/katana_enma.webp"
+        }
+      ],
+      "subtotal": 149.99,
+      "total": 149.99,
+      "estado": "confirmado",
+      "fecha": "2026-07-19T23:36:03.223Z",
+      "id": "WQQ5hpICofc"
+    }
+  ],
+  "supportTickets": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

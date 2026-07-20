@@ -8,6 +8,7 @@ import { BlogPosts } from '../../../../core/model/blog-posts.interface';
   selector: 'app-blog-post',
   imports: [CommonModule, RouterLink],
   templateUrl: './blog-post.html',
+
   styleUrl: './blog-post.css',
 })
 export class BlogPost implements OnInit {

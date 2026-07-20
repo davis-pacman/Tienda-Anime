@@ -35,6 +35,7 @@ export class Checkout {
   submitOrder(): void {
     if (this.checkoutForm.invalid) {
       this.checkoutForm.markAllAsTouched();
+      alert('Por favor, completa los campos correctamente. Verifica los recuadros rojos.');
       return;
     }
 
@@ -59,10 +60,12 @@ export class Checkout {
     }).subscribe({
       next: (order) => {
         this.cartService.clearCart();
+        alert('Orden creada exitosamente');
         this.router.navigate(['/store/checkout/success', order.id]);
       },
       error: (err) => {
         console.error('Error al crear orden', err);
+        alert('Hubo un error al procesar tu compra.');
       },
     });
   }

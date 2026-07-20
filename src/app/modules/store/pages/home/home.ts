@@ -9,12 +9,13 @@ import { CartService } from '../../../../core/services/cart-service';
   selector: 'app-home',
   imports: [RouterLink, NgOptimizedImage, CommonModule],
   templateUrl: './home.html',
+
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
-  private productoservice = inject(ProductService);
-  private cdr = inject(ChangeDetectorRef);
-  private cartService = inject(CartService);
+  private readonly productoservice = inject(ProductService);
+  private readonly cdr = inject(ChangeDetectorRef);
+  private readonly cartService = inject(CartService);
 
   listProductos: Product[] = [];
 

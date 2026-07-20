@@ -11,7 +11,6 @@ import { CategoryService } from '../../../../core/services/category-service';
   selector: 'app-list-products',
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './list-products.html',
-  styleUrl: './list-products.css',
 })
 export class ListProducts implements OnInit {
   private categoryService = inject(CategoryService);

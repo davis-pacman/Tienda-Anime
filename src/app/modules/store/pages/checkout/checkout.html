@@ -6,36 +6,43 @@
         <div class="card bg-dark border-secondary p-4">
           <h4 class="text-light mb-3">Datos del cliente</h4>
           <form [formGroup]="checkoutForm" (ngSubmit)="submitOrder()" class="row g-3">
+            
+            @if (checkoutForm.invalid && checkoutForm.touched) {
+              <div class="col-12 mb-2">
+                <div class="alert alert-danger py-2">Por favor, completa todos los campos requeridos correctamente.</div>
+              </div>
+            }
+
             <div class="col-md-6">
-              <label class="form-label text-white-50">Nombre completo</label>
-              <input formControlName="nombre" class="form-control bg-black text-white border-secondary" />
+              <label for="nombre" class="form-label text-white-50">Nombre completo *</label>
+              <input id="nombre" formControlName="nombre" class="form-control bg-black text-white border-secondary" [class.is-invalid]="checkoutForm.get('nombre')?.invalid && checkoutForm.get('nombre')?.touched" />
             </div>
             <div class="col-md-6">
-              <label class="form-label text-white-50">Correo</label>
-              <input formControlName="correo" type="email" class="form-control bg-black text-white border-secondary" />
+              <label for="correo" class="form-label text-white-50">Correo *</label>
+              <input id="correo" formControlName="correo" type="email" class="form-control bg-black text-white border-secondary" [class.is-invalid]="checkoutForm.get('correo')?.invalid && checkoutForm.get('correo')?.touched" />
             </div>
             <div class="col-md-6">
-              <label class="form-label text-white-50">Teléfono</label>
-              <input formControlName="telefono" class="form-control bg-black text-white border-secondary" />
+              <label for="telefono" class="form-label text-white-50">Teléfono *</label>
+              <input id="telefono" formControlName="telefono" class="form-control bg-black text-white border-secondary" [class.is-invalid]="checkoutForm.get('telefono')?.invalid && checkoutForm.get('telefono')?.touched" />
             </div>
             <div class="col-md-6">
-              <label class="form-label text-white-50">Método de pago</label>
-              <select formControlName="metodoPago" class="form-select bg-black text-white border-secondary">
+              <label for="metodoPago" class="form-label text-white-50">Método de pago *</label>
+              <select id="metodoPago" formControlName="metodoPago" class="form-select bg-black text-white border-secondary" [class.is-invalid]="checkoutForm.get('metodoPago')?.invalid && checkoutForm.get('metodoPago')?.touched">
                 <option value="Yape/Plin">Yape / Plin</option>
                 <option value="Transferencia">Transferencia</option>
                 <option value="Tarjeta">Tarjeta</option>
               </select>
             </div>
             <div class="col-12">
-              <label class="form-label text-white-50">Dirección</label>
-              <textarea formControlName="direccion" rows="3" class="form-control bg-black text-white border-secondary"></textarea>
+              <label for="direccion" class="form-label text-white-50">Dirección *</label>
+              <textarea id="direccion" formControlName="direccion" rows="3" class="form-control bg-black text-white border-secondary" [class.is-invalid]="checkoutForm.get('direccion')?.invalid && checkoutForm.get('direccion')?.touched"></textarea>
             </div>
             <div class="col-12">
-              <label class="form-label text-white-50">Observaciones</label>
-              <textarea formControlName="observacion" rows="2" class="form-control bg-black text-white border-secondary"></textarea>
+              <label for="observacion" class="form-label text-white-50">Observaciones</label>
+              <textarea id="observacion" formControlName="observacion" rows="2" class="form-control bg-black text-white border-secondary"></textarea>
             </div>
-            <div class="col-12">
-              <button class="btn btn-warning fw-bold" type="submit">Confirmar compra</button>
+            <div class="col-12 mt-4">
+              <button class="btn btn-warning fw-bold w-100" type="submit">Finalizar compra</button>
             </div>
           </form>
         </div>

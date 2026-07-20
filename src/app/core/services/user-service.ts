@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   private baseUrl = 'http://localhost:3000/users';
 
-  private http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   createUser(user: User): Observable<User> {
     return this.http.post<User>(this.baseUrl, user);

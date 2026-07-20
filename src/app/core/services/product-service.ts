@@ -9,7 +9,7 @@ import { map, Observable } from 'rxjs';
 export class ProductService {
   private baseUrl = 'http://localhost:3000/productos';
 
-  private http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   getProductos(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl);

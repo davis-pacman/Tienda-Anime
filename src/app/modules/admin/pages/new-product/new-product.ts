@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
   selector: 'app-new-product',
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './new-product.html',
-  styleUrl: './new-product.css',
 })
 export class NewProduct implements OnInit {
   private productService = inject(ProductService);
