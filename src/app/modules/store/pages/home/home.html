@@ -36,42 +36,14 @@
         </div>
 
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3 justify-content-center">
+            @for (category of categorias; track category.id) {
             <div class="col">
-                <a routerLink="/store/catalog" [queryParams]="{cat: 'figuras'}"
+                <a routerLink="/store/catalog"
                     class="card bg-dark border-secondary text-center p-3 text-decoration-none h-100 transition-hover shadow-sm">
-                    <h6 class="text-white mb-0">Figuras</h6>
+                    <h6 class="text-white mb-0">{{category.nombre}}</h6>
                 </a>
             </div>
-            <div class="col">
-                <a routerLink="/store/catalog" [queryParams]="{cat: 'mangas'}"
-                    class="card bg-dark border-secondary text-center p-3 text-decoration-none h-100 transition-hover shadow-sm">
-                    <h6 class="text-white mb-0">Mangas</h6>
-                </a>
-            </div>
-            <div class="col">
-                <a routerLink="/store/catalog" [queryParams]="{cat: 'katanas'}"
-                    class="card bg-dark border-secondary text-center p-3 text-decoration-none h-100 transition-hover shadow-sm">
-                    <h6 class="text-white mb-0">Katanas</h6>
-                </a>
-            </div>
-            <div class="col">
-                <a routerLink="/store/catalog" [queryParams]="{cat: 'ropa'}"
-                    class="card bg-dark border-secondary text-center p-3 text-decoration-none h-100 transition-hover shadow-sm">
-                    <h6 class="text-white mb-0">Ropa</h6>
-                </a>
-            </div>
-            <div class="col">
-                <a routerLink="/store/catalog" [queryParams]="{cat: 'almohadas'}"
-                    class="card bg-dark border-secondary text-center p-3 text-decoration-none h-100 transition-hover shadow-sm">
-                    <h6 class="text-white mb-0">Peluches</h6>
-                </a>
-            </div>
-            <div class="col">
-                <a routerLink="/store/catalog" [queryParams]="{cat: 'accesorios'}"
-                    class="card bg-dark border-secondary text-center p-3 text-decoration-none h-100 transition-hover shadow-sm">
-                    <h6 class="text-white mb-0">Accesorios</h6>
-                </a>
-            </div>
+            }
         </div>
     </div>
 </section>
