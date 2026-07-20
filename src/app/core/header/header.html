@@ -2,7 +2,7 @@
     <div class="container">
 
         <a class="navbar-brand text-warning fw-bold fs-3" routerLink="/store/home">
-            ⛩️ Akihabara<span class="text-light">Store</span>
+            Akihabara<span class="text-light">Store</span>
         </a>
 
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
@@ -16,37 +16,15 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 aligned-links">
 
                 <li class="nav-item">
-                    <a class="nav-link active" routerLink="/store/home">
+                    <a class="nav-link" routerLink="/store/home">
                         <i class="bi bi-house-door-fill"></i> Inicio
                     </a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropProductos" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item ">
+                    <a class="nav-link " routerLink="/store/catalog" id="dropProductos" role="button">
                         <i class="bi bi-tags-fill"></i> Catálogo
                     </a>
-
-                    <ul class="dropdown-menu dropdown-menu-dark border-secondary" aria-labelledby="dropProductos">
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/store/catalog"
-                                [queryParams]="{cat: 'figuras'}">✨ Figuras de Colección</a></li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/store/catalog"
-                                [queryParams]="{cat: 'mangas'}">📚 Mangas y Cómics</a></li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/store/catalog"
-                                [queryParams]="{cat: 'katanas'}">⚔️ Katanas (Réplicas y Lego)</a></li>
-                        <li>
-                            <hr class="dropdown-divider border-secondary">
-                        </li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/productos"
-                                [queryParams]="{cat: 'ropa'}">👕 Ropa e Indumentaria</a></li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/productos"
-                                [queryParams]="{cat: 'almohadas'}">🛌 Almohadas y Peluches</a></li>
-                        <li>
-                            <hr class="dropdown-divider border-secondary">
-                        </li>
-                        <li><a class="dropdown-menu-item dropdown-item" routerLink="/tienda/productos"
-                                [queryParams]="{cat: 'accesorios'}">🔑 Llaveros, Cuadros y Máscaras</a></li>
-                    </ul>
                 </li>
 
                 <li class="nav-item">
@@ -62,16 +40,7 @@
                 </li>
             </ul>
 
-            <div class="mx-lg-3 my-2 my-lg-0 flex-grow-1" style="max-width: 400px;">
-                <form class="d-flex shadow-sm" role="search">
-                    <div class="input-group">
-                        <input type="search" id="buscadorHeader" name="BarraDeBusqueda"
-                            placeholder="¿Qué artículo buscas hoy?"
-                            class="form-control bg-light bg-opacity-75 text-success placeholder-glow border-secondary fs-5 text-opacity-50">
-                        <button class="btn btn-warning fw-bold" type="submit"><i class="bi bi-search"></i></button>
-                    </div>
-                </form>
-            </div>
+
 
             <div class="d-flex align-items-center gap-3 interact-buttons">
 
@@ -109,7 +78,7 @@
 
                         <li class="">
                             <a class="dropdown-menu-item dropdown-item d-flex align-items-center gap-3"
-                                routerLink="/profile/accountconfiguration">
+                                routerLink="/profile/account">
                                 <i class="bi bi-person-fill"></i>
                                 <p class="m-0">Perfil</p>
                             </a>

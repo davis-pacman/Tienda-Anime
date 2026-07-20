@@ -54,31 +54,16 @@ export class Register {
 
         if (this.validUser) {
           console.log(this.validUser);
-          this.userService.getUsers().subscribe({
-            next: (usuarios) => {
+          console.log(userData);
 
-              // 2. 🎯 CÁLCULO DEL ID MANUAL SIMULANDO AUTOINCREMENTAL
-              // Si no hay usuarios, el primer ID será 1.
-              // Si hay usuarios, buscamos el ID máximo usando Math.max y le sumamos 1.
-              const nuevoId: number = usuarios.length > 0
-                ? Math.max(...usuarios.map(u => Number(u.id))) + 1
-                : 1;
-
-              userData.id = String(nuevoId);
-              console.log(userData);
-
-              this.userService.createUser(userData).subscribe({
-                next: () => {
-                  this.router.navigate(['auth/login']);
-                },
-                error: (err) => {
-                  console.error('Error al crear el usuario:', err);
-                  alert('Hubo un error al intentar guardar el nuevo usuario.');
-                }
-              });
-
+          this.userService.createUser(userData).subscribe({
+            next: () => {
+              this.router.navigate(['auth/login']);
             },
-            error: (err) => console.error('Error al obtener la lista de usuarios:', err)
+            error: (err) => {
+              console.error('Error al crear el usuario:', err);
+              alert('Hubo un error al intentar guardar el nuevo usuario.');
+            }
           });
         }
 

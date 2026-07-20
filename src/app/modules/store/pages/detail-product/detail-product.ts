@@ -17,6 +17,7 @@ export class DetailProduct implements OnInit {
   private productService = inject(ProductService);
   private route = inject(ActivatedRoute);
   private cartService = inject(CartService);
+
   producto = signal<Product | null>(null);
 
   productos?: Product;
@@ -38,10 +39,5 @@ export class DetailProduct implements OnInit {
     });
   }
 
-  agregarAlCarrito(): void {
-    if (this.productos) {
-      this.cartService.addToCart(this.productos);
-    }
-  }
 
 }

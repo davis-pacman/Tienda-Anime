@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h4 class="mb-0">{{ esEdicion ? 'Editar Categoría' : 'Nueva Categoría' }}</h4>
+                </div>
+
+                <div class="card-body">
+                    <form [formGroup]="categoryForm" (ngSubmit)="guardar()">
+
+                        <!-- Nombre de Categoría -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" id="nombre" formControlName="nombre" class="form-control"
+                                placeholder="Ej: Accesorios">
+
+                            @if (categoryForm.get('nombre')?.touched && categoryForm.get('nombre')?.invalid) {
+                            <small class="text-danger">El nombre es obligatorio.</small>
+                            }
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-outline-secondary" (click)="cancelar()">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid">
+                                {{ esEdicion ? 'Actualizar' : 'Guardar' }}
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

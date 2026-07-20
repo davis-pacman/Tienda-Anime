@@ -37,7 +37,7 @@ export class CartService {
     this.persist();
   }
 
-  updateQuantity(productoId: number, cantidad: number): void {
+  updateQuantity(productoId: string | undefined, cantidad: number): void {
     this.items.set(
       this.items()
         .map((item) => (item.productoId === productoId ? { ...item, cantidad } : item))
@@ -46,7 +46,7 @@ export class CartService {
     this.persist();
   }
 
-  removeFromCart(productoId: number): void {
+  removeFromCart(productoId?: string): void {
     this.items.set(this.items().filter((item) => item.productoId !== productoId));
     this.persist();
   }

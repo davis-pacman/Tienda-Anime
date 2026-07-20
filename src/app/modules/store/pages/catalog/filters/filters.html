@@ -3,7 +3,7 @@
     <div class="row justify-content-center mb-4 text-center">
         <div class="col-md-9 col-lg-7">
             <h1 class="text-warning fw-bolder mb-2 display-5">
-                ⛩️ DETONA TU ESTILO ANIME
+                DETONA TU ESTILO ANIME
             </h1>
             <p class="text-white-50 fs-5 mb-3">
                 Explora la colección geek más completa: figuras, mangas, katanas y personalizaciones exclusivas.
@@ -16,12 +16,12 @@
 
     <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
         @for (category of listCategorias; track category.id) {
-        <button class="btn btn-outline-success border-secondary px-4 py-2 fw-semibold"
-            (click)="filtrar(category.nombre)" [class.btn-warning]="categorySig === category.nombre"
-            [class.btn-outline-success]="categorySig !== category.nombre">{{category.nombre}}</button>
+        <button class="btn btn-warning border-secondary px-4 py-2 fw-semibold" (click)="filtrar(category.nombre)"
+            [class.btn-warning]="categorySig === category.nombre"
+            [class.btn-outline-warning]="categorySig !== category.nombre">{{category.nombre}}</button>
         }
         <button class="btn btn-warning border-secondary px-4 py-2 fw-semibold" (click)="filtrar('')"
-            [class.btn-warning]="categorySig === ''" [class.btn-outline-success]="categorySig !== ''"> Todo</button>
+            [class.btn-warning]="categorySig === ''" [class.btn-outline-warning]="categorySig !== ''"> Todo</button>
     </div>
 
     <app-products></app-products>
