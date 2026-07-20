@@ -8,6 +8,9 @@ import { Dashboard } from './modules/admin/pages/dashboard/dashboard';
 import { ListProducts } from './modules/admin/pages/list-products/list-products';
 import { NewProduct } from './modules/admin/pages/new-product/new-product';
 import { AccountConfiguration } from './modules/profile/pages/account-configuration/account-configuration';
+import { NewCategory } from './modules/admin/pages/new-category/new-category';
+import { ListCategorys } from './modules/admin/pages/list-categorys/list-categorys';
+import { Account } from './modules/profile/pages/account/account';
 
 export const routes: Routes = [
     {
@@ -31,7 +34,11 @@ export const routes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: Dashboard },
             { path: 'listproducts', component: ListProducts },
-            { path: 'newproduct', component: NewProduct }
+            { path: 'newproduct', component: NewProduct },
+            { path: 'editproduct/:id', component: NewProduct },
+            { path: 'newcategory', component: NewCategory },
+            { path: 'listcategorys', component: ListCategorys },
+            { path: 'editcategory/:id', component: NewCategory }
         ]
     },
     {
@@ -42,7 +49,6 @@ export const routes: Routes = [
             { path: 'home', component: Home },
             { path: 'catalog', component: Filters },
             { path: 'productdetail/:slug', component: DetailProduct },
-            { path: 'productdetail/:id', component: DetailProduct },
             { path: 'cart', loadComponent: () => import('./modules/store/pages/cart/cart').then(m => m.Cart) },
             { path: 'checkout', loadComponent: () => import('./modules/store/pages/checkout/checkout').then(m => m.Checkout) },
             { path: 'checkout/success/:orderId', loadComponent: () => import('./modules/store/pages/checkout-success/checkout-success').then(m => m.CheckoutSuccess) },
@@ -58,7 +64,8 @@ export const routes: Routes = [
         path: 'profile',
         loadComponent: () => import('./modules/profile/layout-profile/layout-profile').then(m => m.LayoutProfile),
         children: [
-            { path: '', redirectTo: 'accountconfiguration', pathMatch: 'full' },
+            { path: '', redirectTo: 'account', pathMatch: 'full' },
+            { path: 'account', component: Account },
             { path: 'accountconfiguration', component: AccountConfiguration }
         ]
     },
