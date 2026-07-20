@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CategoryService {
-  private baseUrl = 'http://localhost:3000/categorias';
+  private readonly baseUrl = 'http://localhost:3000/categorias';
 
   private readonly http = inject(HttpClient);
 

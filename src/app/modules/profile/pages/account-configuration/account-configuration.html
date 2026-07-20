@@ -21,21 +21,23 @@
         <div class="mt-5 p-4" style="background-color: #0f1922; border-radius: 2px;">
             <div class="row g-4">
                 <div class="col-md-6">
-                    <label class="text-white small text-uppercase mb-1">Nombre</label>
-                    <input type="text" formControlName="nombre" class="form-control bg-dark text-white border-0 py-2">
+                    <label class="text-white small text-uppercase mb-1" for="nombre">Nombre</label>
+                    <input type="text" formControlName="nombre" id="nombre"
+                        class="form-control bg-dark text-white border-0 py-2">
                 </div>
                 <div class="col-md-6">
-                    <label class="text-white small text-uppercase mb-1">Apellidos</label>
-                    <input type="text" formControlName="apellidos"
+                    <label class="text-white small text-uppercase mb-1" for="apellidos">Apellidos</label>
+                    <input type="text" formControlName="apellidos" id="apellidos"
                         class="form-control bg-dark text-white border-0 py-2">
                 </div>
                 <div class="col-md-12">
-                    <label class="text-white small text-uppercase mb-1">Correo Electrónico</label>
-                    <input type="email" formControlName="correo" class="form-control bg-dark text-info border-0 py-2">
+                    <label class="text-white small text-uppercase mb-1" for="correo">Correo Electrónico</label>
+                    <input type="email" formControlName="correo" id="correo"
+                        class="form-control bg-dark text-info border-0 py-2">
                 </div>
                 <div class="col-md-12">
-                    <label class="text-white small text-uppercase mb-1">Contraseña</label>
-                    <input type="email" formControlName="contrasenia"
+                    <label class="text-white small text-uppercase mb-1" for="contrasenia">Contraseña</label>
+                    <input type="email" formControlName="contrasenia" id="contrasenia"
                         class="form-control bg-dark text-info border-0 py-2">
                 </div>
             </div>
@@ -51,6 +53,5 @@
                 Cancelar
             </button>
         </div>
-      </div>
     </div>
 </form>

@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-new-category',
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './new-category.html',
-  styleUrl: './new-category.css',
+  styles: ``,
 })
 export class NewCategory implements OnInit {
   private categoryService = inject(CategoryService);

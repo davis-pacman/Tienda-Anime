@@ -1,59 +1,55 @@
-# TiendaAnime
+# Tienda Anime Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+Proyecto de tienda online desarrollado con **Angular** dedicado a la venta de productos, figuras y coleccionables de anime. Esta plataforma cuenta con un catálogo dinámico, gestión de usuarios, carrito de compras y un diseño moderno inspirado en interfaces de alta performance.
 
-## Development server
+## Características Principales
 
-To start a local development server, run:
+*   **Catálogo Dinámico:** Visualización de productos con filtros y detalles técnicos.
+*   **Gestión de Sesiones:** Sistema de login y registro para usuarios.
+*   **Interfaz Responsiva:** Diseño adaptativo utilizando **Bootstrap 5**.
+*   **Performance Optimizada:** Implementación con **Angular SSR** (Server Side Rendering) para una carga más rápida.
+*   **Mock API:** Integración con `json-server` para simular un backend funcional.
 
-```bash
-ng serve
-```
+## Tecnologías y Herramientas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Frontend
+- **Framework:** Angular 21
+- **Estilos:** Bootstrap 5.3 + Bootstrap Icons
+- **Iconografía:** FontAwesome 7
+- **Gestión de paquetes:** pnpm
 
-## Code scaffolding
+### Backend / Herramientas
+- **Mock Server:** `json-server`
+- **Testing:** Vitest
+- **Entorno:** Node.js, Express (para SSR)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Requisitos Previos
 
-```bash
-ng generate component component-name
-```
+Para ejecutar este proyecto, asegúrate de tener instalado:
+- [Node.js](https://nodejs.org/) (versión LTS recomendada)
+- [pnpm](https://pnpm.io/)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Instalación y Configuración
 
-```bash
-ng generate --help
-```
+1. **Clonar el repositorio en la terminal:**
+   ```bash
+   git clone [https://github.com/davis-pacman/Tienda-Anime.git](https://github.com/davis-pacman/Tienda-Anime.git)
+   cd tienda-anime
 
-## Building
+2. **Instalar las dependencias:**
+   ```bash
+   pnpm install
 
-To build the project run:
+3. **Iniciar el servidor de datos:**
+   ```bash
+   pnpm run db
 
-```bash
-ng build
-```
+4. **Iniciar la aplicación en otra terminal:**
+   ```bash
+   ng serve -o
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Contribuciones
+Este proyecto es parte de un proceso de aprendizaje y mejora continua. Si deseas contribuir o tienes sugerencias de mejora en la arquitectura, ¡estoy abierto a recibir feedback!
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Autor
+Davis - [Mi perfil de githun](https://github.com/davis-pacman)

@@ -9,7 +9,7 @@ import { Product } from '../../../../core/model/product.interface';
   selector: 'app-list-categorys',
   imports: [RouterLink],
   templateUrl: './list-categorys.html',
-  styleUrl: './list-categorys.css',
+  styles: ``,
 })
 export class ListCategorys implements OnInit {
   private productService = inject(ProductService);

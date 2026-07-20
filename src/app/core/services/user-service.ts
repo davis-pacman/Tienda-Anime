@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private baseUrl = 'http://localhost:3000/users';
+  private readonly baseUrl = 'http://localhost:3000/users';
 
   private readonly http = inject(HttpClient);
 

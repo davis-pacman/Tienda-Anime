@@ -13,40 +13,11 @@ import { User } from '../../../../core/model/user.interface';
 })
 export class AccountConfiguration implements OnInit {
 
-  private authService = inject(AuthService);
-  private formB = inject(FormBuilder);
-  private userService = inject(UserService);
+  private readonly authService = inject(AuthService);
+  private readonly formB = inject(FormBuilder);
+  private readonly userService = inject(UserService);
 
   public user = this.authService.currentUser;
-  
-  public orders = signal<Order[]>([]);
-  public loadingOrders = signal<boolean>(true);
-
-  private userEffect = effect(() => {
-    const currentUser = this.user();
-    if (currentUser?.correo) {
-      this.fetchOrders(currentUser.correo);
-    } else {
-      this.loadingOrders.set(false);
-    }
-  });
-
-  ngOnInit(): void {
-    // handled by effect
-  }
-
-  fetchOrders(correo: string) {
-    this.storeDataService.getOrdersByEmail(correo).subscribe({
-      next: (orders) => {
-        this.orders.set(orders);
-        this.loadingOrders.set(false);
-      },
-      error: (err) => {
-        console.error('Error fetching orders', err);
-        this.loadingOrders.set(false);
-      }
-    });
-  }
 
   public userForm: FormGroup = this.formB.group({
     nombre: ['', [Validators.required, Validators.minLength(3)]],

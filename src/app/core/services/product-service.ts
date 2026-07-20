@@ -7,7 +7,7 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:3000/productos';
+  private readonly baseUrl = 'http://localhost:3000/productos';
 
   private readonly http = inject(HttpClient);
 

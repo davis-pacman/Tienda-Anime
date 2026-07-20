@@ -5,7 +5,7 @@ import { CartService } from '../../../../core/services/cart-service';
 
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './cart.html',
 
   styleUrl: './cart.css',

@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, ChangeDetectorRef, effect } from '@angular/core';
 import { RouterLink, ActivatedRoute } from '@angular/router';
-import { CommonModule, NgOptimizedImage, DecimalPipe } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ProductService } from '../../../../../core/services/product-service';
 import { Product } from '../../../../../core/model/product.interface';
 import { FilterService } from '../../../../../core/services/filter-service';
@@ -8,7 +8,7 @@ import { CartService } from '../../../../../core/services/cart-service';
 
 @Component({
   selector: 'app-products',
-  imports: [RouterLink, DecimalPipe, NgOptimizedImage, CommonModule],
+  imports: [RouterLink, NgOptimizedImage, CommonModule],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -31,7 +31,7 @@ export class Products implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.searchTerm = params['q'] || '';
       const catUrl = params['cat'];
-      
+
       if (catUrl) {
         this.filterService.updateCategory(catUrl);
       } else {
@@ -42,8 +42,8 @@ export class Products implements OnInit {
   }
 
   obtenerProductos(catActual: string, query: string) {
-    let obs = catActual === '' 
-      ? this.productoservice.getProductos() 
+    let obs = catActual === ''
+      ? this.productoservice.getProductos()
       : this.productoservice.getProductsByCategories(catActual);
 
     obs.subscribe({

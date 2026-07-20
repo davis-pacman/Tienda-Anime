@@ -22,18 +22,14 @@ export class Login {
   });
 
   public userValid = signal<number>(0);
-  public message = signal<string>("");
 
   iniciarSesion() {
     if (this.userLogin.invalid) {
       this.userLogin.markAllAsTouched();
       return;
     }
-    const formUser = this.userLogin.value;
 
-    const userData: User = {
-      ...formUser
-    }
+    const userData = this.userLogin.value;
 
     this.userService.getUserByCorreo(userData.correo).subscribe((usuarios) => {
       const usuarioValido = usuarios[0];
@@ -45,7 +41,6 @@ export class Login {
 
 
           this.userValid.set(0);
-          this.message.set('');
 
           this.authService.establecerSesion(usuarioValido);
 
@@ -53,20 +48,12 @@ export class Login {
 
         } else {
           this.userValid.set(2);
-          this.message.set('Contraseña incorrecta')
 
         }
       } else {
         this.userValid.set(1);
-        this.message.set('Correo no encontrado');
       }
     });
   }
 
-
-  manejarLogin(correo: string, contrasenia: string): void {
-    if (correo && contrasenia) {
-      this.router.navigate(['/store/home']);
-    }
-  }
 }

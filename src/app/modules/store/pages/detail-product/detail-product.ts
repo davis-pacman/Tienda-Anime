@@ -2,10 +2,9 @@
 import { Component, inject, Input, OnInit, signal } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { ProductService } from '../../../../core/services/product-service';
 import { Product } from '../../../../core/model/product.interface';
-import { CartService } from '../../../../core/services/cart-service';
 
 @Component({
   selector: 'app-detail-product',
@@ -13,9 +12,7 @@ import { CartService } from '../../../../core/services/cart-service';
   templateUrl: './detail-product.html',
 })
 export class DetailProduct implements OnInit {
-  private productService = inject(ProductService);
-  private route = inject(ActivatedRoute);
-  private cartService = inject(CartService);
+  private readonly productService = inject(ProductService);
 
   producto = signal<Product | null>(null);
 

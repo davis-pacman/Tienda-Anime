@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-account',
   imports: [CommonModule],
   templateUrl: './account.html',
-  styleUrl: './account.css',
+  styles: ``,
 })
 export class Account {
   private authService = inject(AuthService);
