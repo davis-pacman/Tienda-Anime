@@ -1,0 +1,58 @@
+<div class="container-fluid min-vh-100 p-4" style="background-color: #0f1922;">
+    @if (user()) {
+    <div class="row h-100 justify-content-center align-items-start">
+        <div class="col-12 col-xl-10"> <!-- Más ancho para pantallas grandes -->
+
+            <div class="card shadow-lg border-0 h-100" style="background-color: #1b2838; border-radius: 4px;">
+
+                <!-- Banner más alto para dar presencia -->
+                <div style="height: 200px; background: linear-gradient(to right, #2a475e, #1b2838);"></div>
+
+                <div class="card-body px-5 pb-5 position-relative">
+                    <!-- Avatar grande y posicionado -->
+                    <div class="d-flex align-items-end" style="margin-top: -80px;">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold shadow border border-4 border-dark"
+                            style="width: 150px; height: 150px; font-size: 4rem; background-color: #384f63;">
+                            {{ user()?.nombre?.charAt(0) | uppercase }}
+                        </div>
+                        <div class="ms-4 mb-3">
+                            <h1 class="text-white fw-bold display-5 m-0">{{ user()?.nombre }}</h1>
+                            <span class="text-info text-uppercase fw-bold" style="letter-spacing: 2px;">{{ user()?.role
+                                }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Contenido principal más amplio -->
+                    <div class="mt-5 p-4" style="background-color: #0f1922; border-radius: 2px;">
+                        <div class="row  g-4">
+                            <div class="col-md-6">
+                                <p class="text-white small text-uppercase mb-1">Apellidos</p>
+                                <h4 class="text-white">{{ user()?.apellidos || 'No registrado' }}</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-white small text-uppercase mb-1">Correo Electrónico</p>
+                                <h4 class="text-info">{{ user()?.correo }}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botones ajustados -->
+                    <div class="d-flex gap-3 mt-5">
+
+                        <button (click)="logout()" class="btn btn-lg btn-outline-danger px-4">
+                            Cerrar sesión
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    } @else {
+    <div class="text-center text-secondary mt-5">
+        <div class="spinner-border spinner-border-sm text-info" role="status"></div>
+        <p class="mt-2" style="font-size: 0.9rem;">Accediendo a la red...</p>
+    </div>
+    }
+</div>

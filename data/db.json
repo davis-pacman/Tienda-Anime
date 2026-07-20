@@ -1,11 +1,12 @@
 {
   "users": [
     {
-      "id": "1",
       "role": "admin",
       "nombre": "admin",
+      "apellidos": "Quispe Barjaasd",
       "correo": "admin@admin.com",
-      "contrasenia": "admin1234"
+      "contrasenia": "admin1234",
+      "id": "1"
     },
     {
       "role": "cliente",
@@ -22,6 +23,14 @@
       "correo": "correodediddy@gmail.com",
       "contrasenia": "diddy123",
       "id": "11hWZ0sqN8M"
+    },
+    {
+      "role": "cliente",
+      "nombre": "Carlos",
+      "apellidos": "Flores Gonzales",
+      "correo": "carlosFG@gmail.com",
+      "contrasenia": "carlos123",
+      "id": "jGZYMPLyPZ4"
     }
   ],
   "roles": [
@@ -36,16 +45,16 @@
   ],
   "categorias": [
     {
-      "id": "1",
-      "nombre": "katanas"
+      "nombre": "Katanas",
+      "id": "1"
     },
     {
-      "id": "2",
-      "nombre": "ropa"
+      "nombre": "Ropa",
+      "id": "2"
     },
     {
-      "id": "3",
-      "nombre": "figuras"
+      "nombre": "Figuras",
+      "id": "3"
     },
     {
       "id": "4",
@@ -55,15 +64,15 @@
   "productos": [
     {
       "id": "1",
-      "esPersonalizado": false,
       "nombre": "Figura de Goku",
       "slug": "figura-de-goku",
-      "categoria": "figuras",
+      "categoria": "Figuras",
       "stock": 0,
-      "precioActual": 29.99,
-      "precioAntes": 39.99,
+      "descripcion": "Figura de acción de Goku en su forma Super Saiyan, con detalles impresionantes y articulaciones para posar.",
+      "precioActual": 30.6,
+      "precioAntes": 40,
+      "esPersonalizado": false,
       "imagenUrl": "products_images/figura_de_goku.webp",
-      "descripcion": "Figura de acciÃ³n de Goku en su forma Super Saiyan, con detalles impresionantes y articulaciones para posar.",
       "especificaciones": [
         {
           "nombre": "Altura",
@@ -85,15 +94,15 @@
     },
     {
       "id": "2",
-      "esPersonalizado": true,
       "nombre": "Camiseta de Naruto",
       "slug": "camiseta-de-naruto",
-      "categoria": "ropa",
+      "categoria": "Ropa",
       "stock": 20,
-      "precioActual": 19.99,
-      "precioAntes": 24.99,
+      "descripcion": "Camiseta de algodón con el diseño del símbolo de la aldea de Konoha.",
+      "precioActual": 20,
+      "precioAntes": 25,
+      "esPersonalizado": true,
       "imagenUrl": "products_images/camiseta_de_naruto.jpg",
-      "descripcion": "Camiseta de algodÃ³n con el diseÃ±o del sÃ­mbolo de la aldea de Konoha.",
       "especificaciones": [
         {
           "nombre": "Material",
@@ -123,15 +132,15 @@
     },
     {
       "id": "3",
-      "esPersonalizado": false,
       "nombre": "Katana Enma - Roronoa Zoro (One Piece)",
-      "slug": "katana-enma-roronoa-zoro-(one-piece)",
-      "categoria": "katanas",
+      "slug": "katana-enma-roronoa-zoro-one-piece",
+      "categoria": "Katanas",
       "stock": 5,
-      "precioActual": 149.99,
-      "precioAntes": 179.99,
+      "descripcion": "Réplica exacta a escala real de la mítica espada Enma de Zoro, ideal para cosplay o exhibición.",
+      "precioActual": 149.9,
+      "precioAntes": 179.9,
+      "esPersonalizado": false,
       "imagenUrl": "products_images/katana_enma.webp",
-      "descripcion": "RÃ©plica exacta a escala real de la mÃ­tica espada Enma de Zoro, ideal para cosplay o exhibiciÃ³n.",
       "especificaciones": [
         {
           "nombre": "Material de la hoja",
@@ -178,6 +187,24 @@
         {
           "nombre": "Tipo de encuadernaciÃ³n",
           "valor": "RÃºstica con sobrecubierta (Tapa blanda)"
+        }
+      ]
+    },
+    {
+      "id": "JiDvvoePUi8",
+      "nombre": "Katana de prueba",
+      "slug": "katana-de-prueba",
+      "categoria": "Katanas",
+      "stock": 5,
+      "descripcion": "es una katana de prueba",
+      "precioActual": 120,
+      "precioAntes": null,
+      "esPersonalizado": false,
+      "imagenUrl": "https://images.unsplash.com/photo-1662826321315-c72a74f871c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2F0YW5hc3xlbnwwfHwwfHx8MA%3D%3D",
+      "especificaciones": [
+        {
+          "nombre": "Largo",
+          "valor": "80cm"
         }
       ]
     }

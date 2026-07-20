@@ -1,1 +1,184 @@
-<p>new-product works!</p>
+<div class="container-fluid p-4 p-md-5 flex-grow-1 bg-light">
+
+    <!-- CABECERA -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="fw-bold text-dark mb-1">{{ esEdicion ? 'Editar Producto' : 'Nuevo Producto' }}</h2>
+            <p class="text-muted">Completa la información detallada para actualizar el inventario.</p>
+        </div>
+    </div>
+
+    <!-- FORMULARIO PRINCIPAL -->
+    <form [formGroup]="productForm" (ngSubmit)="guardarProducto()">
+        <div class="row g-4">
+
+            <!-- COLUMNA IZQUIERDA: Datos principales -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm rounded-3 p-4 bg-white mb-4">
+                    <h5 class="fw-bold text-secondary mb-3">Información General</h5>
+
+                    <div class="row g-3">
+                        <!-- Nombre del Producto -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Nombre del Producto *</label>
+                            <input type="text" class="form-control" formControlName="nombre"
+                                placeholder="Ej. Audífonos Bluetooth">
+                            @if (productForm.get('nombre')?.touched && productForm.get('nombre')?.invalid) {
+                            <small class="text-danger">El nombre es obligatorio.</small>
+                            }
+                        </div>
+
+                        <!-- Slug (Auto-generable o manual) -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Slug (URL) *</label>
+                            <input type="text" class="form-control font-monospace" formControlName="slug"
+                                placeholder="ej-audifonos-bluetooth">
+                            @if (productForm.get('slug')?.touched && productForm.get('slug')?.invalid) {
+                            <small class="text-danger">El slug es obligatorio y no debe contener espacios.</small>
+                            }
+                        </div>
+
+                        <!-- Categoría -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Categoría *</label>
+                            <select class="form-select" formControlName="categoria">
+                                <option value="">Selecciona una categoría</option>
+                                @for (cate of categorias; track $index) {
+                                <option [value]="cate.nombre">{{cate.nombre}}</option>
+                                }
+                            </select>
+
+                        </div>
+
+                        <!-- Stock -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Stock Inicial *</label>
+                            <input type="number" class="form-control" formControlName="stock" min="0"
+                                onkeydown="if(['-', '.', ','].includes(event.key)) event.preventDefault()">
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Descripción del Producto *</label>
+                            <textarea class="form-control" formControlName="descripcion" rows="4"
+                                placeholder="Escribe una descripción detallada..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN DINÁMICA: Especificaciones -->
+                <div class="card border-0 shadow-sm rounded-3 p-4 bg-white">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold text-secondary m-0">Especificaciones Técnicas</h5>
+                        <button type="button" class="btn btn-outline-warning btn-sm fw-bold text-dark"
+                            (click)="agregarEspecificacion()">
+                            <i class="bi bi-plus-lg me-1"></i> Añadir Fila
+                        </button>
+                    </div>
+
+                    <div formArrayName="especificaciones">
+                        @for (esp of especificacionesFormArray.controls; track $index) {
+                        <div [formGroupName]="$index" class="row g-2 mb-2 align-items-center">
+                            <div class="col-5">
+                                <input type="text" class="form-control form-control-sm" formControlName="nombre"
+                                    placeholder="Ej. Color, Peso, Altura">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control form-control-sm" formControlName="valor"
+                                    placeholder="Ej. Negro, 250g, 32 cm">
+                            </div>
+                            <div class="col-1 text-end">
+                                <button type="button" class="btn btn-sm btn-outline-danger border-0"
+                                    (click)="eliminarEspecificacion($index)">
+                                    <i class="bi bi-trash3-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                        } @empty {
+                        <p class="text-muted fs-7 m-0 py-2 text-center border rounded-3 border-dashed">
+                            No hay especificaciones agregadas aún. Haz clic en "Añadir Fila".
+                        </p>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA: Precios, Imagen y Estado -->
+            <div class="col-lg-4">
+
+                <!-- Precios y Personalización -->
+                <div class="card border-0 shadow-sm rounded-3 p-4 bg-white mb-4">
+                    <h5 class="fw-bold text-secondary mb-3">Precios y Atributos</h5>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Precio Actual *</label>
+                        <div class="input-group">
+                            <span class="input-group-text">S/</span>
+                            <input type="number" class="form-control" formControlName="precioActual" min="0" step="0.1"
+                                onkeydown="if(['-', '.'].includes(event.key)) event.preventDefault()">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Precio Antes (Opcional)</label>
+                        <div class="input-group">
+                            <span class="input-group-text">S/</span>
+                            <input type="number" class="form-control" formControlName="precioAntes" min="0" step="0.1"
+                                onkeydown="if(['-', '.'].includes(event.key)) event.preventDefault()">
+                        </div>
+                        <small class="text-muted fs-7">Úsalo para mostrar un precio de oferta tachado.</small>
+                    </div>
+
+                    <hr>
+
+                    <!-- Es Personalizado -->
+                    <div class="form-check form-switch p-0 d-flex justify-content-between align-items-center">
+                        <div>
+                            <label class="form-check-label fw-semibold cursor-pointer" for="switchPersonalizado">¿Es
+                                Producto Personalizado?</label>
+                            <div class="text-muted fs-7">Permite al cliente agregar texto o diseños.</div>
+                        </div>
+                        <input class="form-check-input cursor-pointer ms-2 fs-4" type="checkbox" role="switch"
+                            id="switchPersonalizado" formControlName="esPersonalizado">
+                    </div>
+                </div>
+
+                <!-- Imagen del Producto -->
+                <div class="card border-0 shadow-sm rounded-3 p-4 bg-white mb-4">
+                    <h5 class="fw-bold text-secondary mb-3">Imagen del Producto</h5>
+
+                    <!-- Contenedor de Vista Previa -->
+                    <div class="border rounded-3 d-flex flex-column align-items-center justify-content-center p-3 bg-light mb-3 text-center"
+                        style="min-height: 180px;">
+                        @if (productForm.get('imagenUrl')?.value) {
+                        <img [src]="productForm.get('imagenUrl')?.value" class="img-fluid rounded shadow-sm mb-2"
+                            style="max-height: 140px;" alt="Preview">
+                        <button type="button" class="btn btn-sm btn-link text-danger p-0"
+                            (click)="productForm.get('imagenUrl')?.setValue('')">Remover imagen</button>
+                        } @else {
+                        <i class="bi bi-cloud-arrow-up display-5 text-muted mb-2"></i>
+                        <span class="fs-7 text-muted">Ingresa la URL de la imagen del producto</span>
+                        }
+                    </div>
+
+                    <!-- Input para la URL (Apegado a tu modelo string) -->
+                    <input type="text" class="form-control form-control-sm" formControlName="imagenUrl"
+                        placeholder="https://ejemplo.com/imagen.jpg">
+                </div>
+
+                <!-- BOTONES DE ACCIÓN DEL FORMULARIO -->
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-warning text-dark fw-bold py-2.5 shadow-sm"
+                        [disabled]="productForm.invalid">
+                        <i class="bi bi-floppy-fill me-2"></i> @if(!esEdicion){Guardar Producto} @else {Guardar Cambios}
+                    </button>
+                    <button type="button" class="btn btn-light text-secondary py-2.5" (click)="cancelar()">
+                        Cancelar
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</div>

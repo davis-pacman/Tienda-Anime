@@ -1,7 +1,7 @@
 import { Specification } from "./specification.interface";
 
 export interface Product {
-    id: number;
+    id?: string;
     slug: string;
     esPersonalizado?: boolean;
     imagenUrl: string;
@@ -11,5 +11,6 @@ export interface Product {
     precioActual: number;
     precioAntes?: number;
     descripcion: string;
-    especificaiones: Specification[];
+    especificaciones: Specification[];
+    seleccionado?: boolean;
 }

@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
+import { AuthService } from '../../../core/services/auth-service';
 
 @Component({
   selector: 'app-layout-admin',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './layout-admin.html',
-  styles: ``,
+  styleUrl: '../../../../styles.css',
 })
-export class LayoutAdmin { }
+export class LayoutAdmin {
+  private authService = inject(AuthService);
+  private router = inject(Router);
+
+  public user = this.authService.currentUser;
+
+  cerrarSesion() {
+    this.authService.logout();
+    this.router.navigate(['auth/login']);
+  }
+}

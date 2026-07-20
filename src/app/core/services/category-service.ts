@@ -15,4 +15,20 @@ export class CategoryService {
     return this.http.get<Category[]>(this.baseUrl);
   }
 
+  getCategoryById(id: string): Observable<Category | null> {
+    return this.http.get<Category>(`${this.baseUrl}/${id}`);
+  }
+
+  createCategory(categoria: Category): Observable<Category> {
+    return this.http.post<Category>(this.baseUrl, categoria);
+  }
+
+  updateCategory(id: string, categoria: Category): Observable<Category> {
+    return this.http.put<Category>(`${this.baseUrl}/${id}`, categoria);
+  }
+
+  deleteCategory(id: string | undefined): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
 }

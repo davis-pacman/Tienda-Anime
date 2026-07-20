@@ -16,16 +16,16 @@ export class Cart {
 
   readonly items = this.cartService.items;
 
-  increaseQuantity(productoId: number): void {
+  increaseQuantity(productoId: string | undefined): void {
     this.cartService.updateQuantity(productoId, this.getItem(productoId).cantidad + 1);
   }
 
-  decreaseQuantity(productoId: number): void {
+  decreaseQuantity(productoId: string | undefined): void {
     const item = this.getItem(productoId);
     this.cartService.updateQuantity(productoId, item.cantidad - 1);
   }
 
-  removeItem(productoId: number): void {
+  removeItem(productoId?: string): void {
     this.cartService.removeFromCart(productoId);
   }
 
@@ -45,7 +45,7 @@ export class Cart {
     return this.cartService.totalPrice;
   }
 
-  private getItem(productoId: number) {
+  private getItem(productoId: string | undefined) {
     return this.cartService.items().find((item) => item.productoId === productoId)!;
   }
 }

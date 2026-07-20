@@ -1,5 +1,5 @@
 export interface OrderItem {
-  productoId: number;
+  productoId?: string;
   nombre: string;
   precio: number;
   cantidad: number;

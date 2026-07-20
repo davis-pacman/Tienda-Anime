@@ -13,9 +13,10 @@ import { CartService } from '../../../../core/services/cart-service';
   templateUrl: './detail-product.html',
 })
 export class DetailProduct implements OnInit {
-  private readonly productService = inject(ProductService);
-  private readonly route = inject(ActivatedRoute);
-  private readonly cartService = inject(CartService);
+  private productService = inject(ProductService);
+  private route = inject(ActivatedRoute);
+  private cartService = inject(CartService);
+
   producto = signal<Product | null>(null);
 
   productos?: Product;
@@ -37,10 +38,5 @@ export class DetailProduct implements OnInit {
     });
   }
 
-  agregarAlCarrito(): void {
-    if (this.productos) {
-      this.cartService.addToCart(this.productos);
-    }
-  }
 
 }

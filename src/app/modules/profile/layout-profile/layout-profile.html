@@ -1,5 +1,36 @@
-<app-header></app-header>
-<main class="min-vh-100 bg-black py-5">
-    <router-outlet></router-outlet>
-</main>
-<app-footer></app-footer>
+<div class="min-vh-100 d-flex">
+
+    <div class="d-flex flex-column bg-dark min-vh-100 sidebar shadow">
+
+        <!-- Botón Hamburguesa -->
+        <div class="btn rounded-0 p-3 text-center border-bottom">
+            <i class="bi bi-list text-warning fs-2"></i>
+        </div>
+
+        <!-- Grupo de navegación -->
+        <nav class="nav flex-column mt-3">
+            <a class="nav-link text-white py-3 px-4 d-flex align-items-center sidebar-item"
+                routerLink="/profile/account" routerLinkActive="active">
+                <i class="bi bi-person me-3 fs-5"></i> <span>Perfil</span>
+            </a>
+
+            <a class="nav-link text-white py-3 px-4 d-flex align-items-center sidebar-item"
+                routerLink="/profile/accountconfiguration" routerLinkActive="active">
+                <i class="bi bi-person me-3 fs-5"></i> <span>Editar Perfil</span>
+            </a>
+
+            <hr class="text-secondary mx-3">
+
+            <a class="nav-link text-warning py-3 px-4 d-flex align-items-center sidebar-item" routerLink="/store/home"
+                routerLinkActive="active">
+                <i class="bi bi-shop me-3 fs-5"></i> <span>Tienda</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="flex-grow-1 min-vh-100 bg-danger">
+
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

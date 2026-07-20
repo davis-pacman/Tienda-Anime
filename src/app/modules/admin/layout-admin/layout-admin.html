@@ -1,1 +1,83 @@
-<router-outlet></router-outlet>
+<div class="min-vh-100 d-flex">
+
+    <div class="d-flex flex-column bg-dark min-vh-100 sidebar shadow">
+
+        <!-- Botón Hamburguesa -->
+        <div class="btn rounded-0 p-3 text-center border-bottom border-secondary">
+            <i class="bi bi-list text-warning fs-2"></i>
+        </div>
+
+        <!-- Grupo de navegación -->
+        <nav class="nav flex-column mt-3">
+            <a class="nav-link text-white py-3 px-4 d-flex align-items-center sidebar-item"
+                routerLink="/admin/dashboard" routerLinkActive="active">
+                <i class="bi bi-house-door me-3 fs-5"></i> <span>Dashboard</span>
+            </a>
+
+            <a class="nav-link text-white py-3 px-4 d-flex align-items-center sidebar-item"
+                routerLink="/admin/listcategorys" routerLinkActive="active">
+                <i class="bi bi-tags me-3 fs-5"></i> <span>Categorías</span>
+            </a>
+
+            <a class="nav-link text-white py-3 px-4 d-flex align-items-center sidebar-item"
+                routerLink="/admin/listproducts" routerLinkActive="active">
+                <i class="bi bi-box-seam me-3 fs-5"></i> <span>Inventario</span>
+            </a>
+
+            <hr class="text-secondary mx-3">
+
+            <a class="nav-link text-warning py-3 px-4 d-flex align-items-center sidebar-item" routerLink="/store/home"
+                routerLinkActive="active">
+                <i class="bi bi-shop me-3 fs-5"></i> <span>Tienda</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="flex-grow-1 d-flex flex-column min-vh-100 bg-danger">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 shadow-sm">
+            <!-- LOGO -->
+            <a class="navbar-brand fw-bold text-uppercase tracking-wide" href="#">
+                <span class="text-warning"><i class="bi bi-box-seam"></i> IMPACTO</span>
+            </a>
+
+            <!-- LADO DERECHO: Usuario -->
+            <div class="d-flex align-items-center gap-3 ms-auto">
+                <!-- Saludo -->
+                <div class="text-white-50 small d-none d-md-block">
+                    Bienvenido, <span class="text-white fw-bold">Administrador</span>
+                </div>
+
+                <!-- Dropdown de Usuario -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center gap-2"
+                        id="dropUserOptions" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle fs-5"></i>
+                        <strong class="text-warning">{{ user()?.nombre }}</strong>
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark shadow border-0 mt-2"
+                        aria-labelledby="dropUserOptions">
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center gap-2"
+                                routerLink="/profile/accountconfiguration">
+                                <i class="bi bi-person-gear"></i> Configuración
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider border-secondary">
+                        </li>
+                        <li>
+                            <button class="dropdown-item d-flex align-items-center gap-2 text-danger"
+                                (click)="cerrarSesion()">
+                                <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

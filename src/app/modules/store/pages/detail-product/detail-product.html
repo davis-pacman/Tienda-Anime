@@ -1,28 +1,49 @@
 @if (producto(); as producto) {
-<div class="container mt-5 text-light">
-  <div class="row bg-dark p-4 rounded border border-secondary">
+<div class="container py-5">
+  <!-- Tarjeta principal tipo "Panel de Control" -->
+  <div class="card bg-black border border-secondary shadow-none overflow-hidden" style="border-radius: 0;">
+    <div class="row g-0">
 
-    <div class="col-md-6 text-center">
-      <img [src]="producto.imagenUrl" class="img-fluid rounded shadow" [alt]="producto.nombre"
-        style="max-height: 450px;">
-    </div>
-
-    <div class="col-md-6">
-      <h2 class="text-warning fw-bold mb-3">{{ producto.nombre }}</h2>
-      <p class="text-danger fs-5">{{ producto.descripcion }}</p>
-
-      <div class="my-4">
-        <span class="fs-3 fw-bold text-success me-3">S/ {{ producto.precioActual }}</span>
-        <span class="text-decoration-line-through text-muted">S/ {{ producto.precioAntes }}</span>
+      <!-- Lado izquierdo: Imagen con filtro -->
+      <div class="col-md-5 bg-dark d-flex align-items-center justify-content-center position-relative">
+        <div class="position-absolute top-0 start-0 w-100 h-100"></div>
+        <img [src]="producto.imagenUrl" class="img-fluid p-4" [alt]="producto.nombre">
       </div>
 
-      <p><strong>Stock disponible:</strong> {{ producto.stock }} unidades</p>
+      <!-- Lado derecho: Datos -->
+      <div class="col-md-7 p-5">
+        <!-- Badge categoría -->
+        <div class="d-flex justify-content-between align-items-start">
+          <span class="text-uppercase tracking-widest text-warning"
+            style="letter-spacing: 3px; font-size: 0.7rem;">Hardware Core</span>
+          <span class="badge bg-transparent border border-success text-success">{{ producto.stock }} EN STOCK</span>
+        </div>
 
-      <a routerLink="/store/catalog" class="btn btn-outline-warning mt-4">
-        <i class="bi bi-arrow-left"></i> Volver al catalogo
-      </a>
+        <h1 class="display-4 fw-light text-white mt-3">{{ producto.nombre }}</h1>
+        <p class="text-secondary mt-3 font-monospace">{{ producto.descripcion }}</p>
+
+        <!-- Bloque de Precio -->
+        <div class="mt-4 mb-5 border-top border-bottom border-dark py-3">
+          <div class="display-6 text-white fw-bold">S/ {{ producto.precioActual }}</div>
+          <small class="text-danger text-decoration-line-through">S/ {{ producto.precioAntes }}</small>
+        </div>
+
+        <!-- Especificaciones en formato "Datos de Servidor" -->
+        <div class="d-grid gap-2 mb-5">
+          @for (espe of producto.especificaciones; track $index) {
+          <div class="d-flex justify-content-between border-bottom border-dark pb-2">
+            <span class="text-secondary font-monospace">{{ espe.nombre }}</span>
+            <span class="text-white fw-bold">{{ espe.valor }}</span>
+          </div>
+          }
+        </div>
+
+        <!-- Botones -->
+        <div class="d-flex gap-2">
+          <a routerLink="/store/catalog" class="btn btn-outline-secondary rounded-0 px-4">ATRÁS</a>
+        </div>
+      </div>
     </div>
-
   </div>
 </div>
 } @else {
